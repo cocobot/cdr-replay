@@ -53,7 +53,30 @@ def slug(category, year, series):
     return f"{category}_{year}_{re.sub(r'[^A-Za-z0-9]', '', str(series))}"
 
 
-def build(config_path="config/videos.yaml", ocr_fps=1.0, workers=0, cleanup=False):
+def _write_index(tree, teams):
+    """(Re)write index.json + teams.json from what's parsed so far."""
+    for t in teams:
+        teams[t].sort(key=lambda a: (a["year"], a["series"], a["t_start"]))
+    teams_meta = sorted((_team_meta(n, apps) for n, apps in teams.items()),
+                        key=lambda t: t["name"].lower())
+    (DATA / "index.json").write_text(json.dumps(
+        {"tree": tree, "teams": teams_meta}, ensure_ascii=False, separators=(",", ":")))
+    (DATA / "teams.json").write_text(json.dumps(
+        teams, ensure_ascii=False, separators=(",", ":")))
+
+
+def _git_publish(msg):
+    try:
+        subprocess.run(["git", "add", "site/data"], cwd=ROOT, check=True)
+        if subprocess.run(["git", "diff", "--cached", "--quiet"], cwd=ROOT).returncode != 0:
+            subprocess.run(["git", "commit", "-q", "-m", msg], cwd=ROOT, check=True)
+            subprocess.run(["git", "push", "-q", "origin", "main"], cwd=ROOT, check=True)
+            print(f"  published: {msg}")
+    except Exception as e:
+        print(f"  (git publish failed: {e})")
+
+
+def build(config_path="config/videos.yaml", ocr_fps=1.0, workers=0, cleanup=False, publish=False):
     cfg_path = ROOT / config_path
     cfg = yaml.safe_load(cfg_path.read_text(encoding="utf-8"))
     templates = overlay.load_templates(TEMPLATES_NPZ)
@@ -63,7 +86,10 @@ def build(config_path="config/videos.yaml", ocr_fps=1.0, workers=0, cleanup=Fals
         if rp.exists():
             roster = overlay.load_roster(rp)
 
+    # Start clean: drop any previous (e.g. demo) data so only real parsed data remains.
     (DATA / "series").mkdir(parents=True, exist_ok=True)
+    for f in (DATA / "series").glob("*.json"):
+        f.unlink()
     tree, teams = {}, {}
 
     for v in cfg["videos"]:
@@ -84,7 +110,6 @@ def build(config_path="config/videos.yaml", ocr_fps=1.0, workers=0, cleanup=Fals
             json.dumps(out, ensure_ascii=False, separators=(",", ":")))
 
         tree.setdefault(cat, {}).setdefault(str(year), {})[series] = len(matches)
-
         for mi, m in enumerate(matches):
             ref = {"category": cat, "year": year, "series": series, "slug": sl,
                    "video_id": vid, "mi": mi, "t_start": m["t_start"], "t_end": m["t_end"],
@@ -96,18 +121,13 @@ def build(config_path="config/videos.yaml", ocr_fps=1.0, workers=0, cleanup=Fals
                     teams.setdefault(team, []).append(
                         {**ref, "color": color, "opponent": opp, "city": city, "country": country})
 
-    for t in teams:
-        teams[t].sort(key=lambda a: (a["year"], a["series"], a["t_start"]))
+        # Keep index/teams consistent with what's parsed; publish after each video.
+        _write_index(tree, teams)
+        if publish:
+            _git_publish(f"data: {cat} {year} série {series} ({len(matches)} matchs)")
 
-    teams_meta = [_team_meta(name, apps) for name, apps in teams.items()]
-    teams_meta.sort(key=lambda t: t["name"].lower())
-
-    (DATA / "index.json").write_text(json.dumps(
-        {"tree": tree, "teams": teams_meta}, ensure_ascii=False, separators=(",", ":")))
-    (DATA / "teams.json").write_text(json.dumps(
-        teams, ensure_ascii=False, separators=(",", ":")))
     n_series = sum(len(y) for c in tree.values() for y in c.values())
-    print(f"\nWrote {DATA} | {n_series} séries, {len(teams)} équipes")
+    print(f"\nDone | {n_series} séries, {len(teams)} équipes")
 
 
 def _mode(vals):
