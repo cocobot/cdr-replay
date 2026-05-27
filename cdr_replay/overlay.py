@@ -219,6 +219,8 @@ def _ocr_line(frame, region, thresh, otsu=False):
     gray = cv2.cvtColor(big, cv2.COLOR_BGR2GRAY)
     flag = cv2.THRESH_BINARY + (cv2.THRESH_OTSU if otsu else 0)
     _, th = cv2.threshold(gray, 0 if otsu else thresh, 255, flag)
+    # Pad: Tesseract drops glyphs that touch the image border (lost first letter).
+    th = cv2.copyMakeBorder(th, 16, 16, 24, 24, cv2.BORDER_CONSTANT, value=0)
     return pytesseract.image_to_string(th, config="--psm 7").strip()
 
 
@@ -227,7 +229,10 @@ def read_city(frame, side, cfg=DEFAULT):
     region = cfg.city_yellow if side == "yellow" else cfg.city_blue
     t = re.sub(r"[^0-9A-Za-zÀ-ÿ' .-]", "", _ocr_line(frame, region, cfg.city_thresh))
     t = re.sub(r"\s+", " ", t).strip(" .-'")
-    return t or None
+    toks = t.lower().split()
+    if not toks or any(w in ("null", "nul", "none") for w in toks):  # overlay has no city
+        return None
+    return t
 
 
 def read_country_raw(frame, side, cfg=DEFAULT):

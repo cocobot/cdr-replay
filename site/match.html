@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CDR · Replay</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="app">
+  <div id="hdr"></div>
+  <main style="flex:1">
+    <div class="container page" id="page"></div>
+  </main>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+mountHeader();
+const slug = qs("s"), i = parseInt(qs("i"), 10);
+
+fetchJSON(`data/series/${slug}.json`).then((d) => {
+  const m = d.matches[i];
+  if (!m) throw new Error("match");
+  const label = isFinale(d.series) ? "Phase finale" : seriesLabel(d.series);
+  document.title = `CDR · ${m.team_yellow} vs ${m.team_blue}`;
+  const us = isUs(m.team_yellow) || isUs(m.team_blue);
+  const start = Math.floor(m.t_start), end = Math.ceil(m.t_end);
+  const src = `https://www.youtube.com/embed/${d.video_id}?start=${start}&end=${end}&rel=0&modestbranding=1`;
+
+  const loc = (city, country) => [city, country].filter(Boolean).join(", ");
+  const prev = i > 0 ? d.matches[i - 1] : null;
+  const next = i < d.matches.length - 1 ? d.matches[i + 1] : null;
+  const pn = (mm) => `${mm.team_yellow || "?"} vs ${mm.team_blue || "?"}`;
+
+  document.getElementById("page").innerHTML = `
+    <a class="back" href="series.html?s=${slug}">← ${label} · ${catLabel(d.category)} ${d.year}</a>
+    <div class="player"><iframe src="${src}" title="match" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    <div class="match-head">
+      <div class="match-head__teams">
+        ${teamSpan(m.team_yellow)}<span class="vs">vs</span>${teamSpan(m.team_blue)}
+        ${us ? '<span class="is-us-badge">← nous !</span>' : ""}
+      </div>
+    </div>
+    <div class="match-meta">
+      <span><strong>${catLabel(d.category)}</strong> · ${label} · Match ${i + 1}</span>
+      <span>Table <strong>${esc(m.table || "?")}</strong></span>
+      <span>à ${fmt(m.t_start)}</span>
+      ${loc(m.yellow_city, m.yellow_country) ? `<span>📍 ${esc(m.team_yellow)} — ${esc(loc(m.yellow_city, m.yellow_country))}</span>` : ""}
+      ${loc(m.blue_city, m.blue_country) ? `<span>📍 ${esc(m.team_blue)} — ${esc(loc(m.blue_city, m.blue_country))}</span>` : ""}
+    </div>
+    ${(prev || next) ? `<div class="prevnext">
+      ${prev ? `<a href="match.html?s=${slug}&i=${i - 1}"><div class="prevnext__dir">← Précédent</div><div class="prevnext__label">${esc(pn(prev))}</div></a>` : "<div></div>"}
+      ${next ? `<a class="next" href="match.html?s=${slug}&i=${i + 1}"><div class="prevnext__dir">Suivant →</div><div class="prevnext__label">${esc(pn(next))}</div></a>` : "<div></div>"}
+    </div>` : ""}`;
+}).catch(() => {
+  document.getElementById("page").innerHTML = `<a class="back" href="index.html">← Accueil</a><h1 class="page__title">Match introuvable</h1>`;
+});
+</script>
+</body>
+</html>

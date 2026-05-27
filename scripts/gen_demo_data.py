@@ -73,10 +73,10 @@ def main():
                     {"category": cat, "year": year, "series": s, "video_id": vid,
                      "duration_s": 7200.0, "matches": matches},
                     ensure_ascii=False, separators=(",", ":")))
-                tree.setdefault(cat, {}).setdefault(str(year), []).append(s)
-                for m in matches:
+                tree.setdefault(cat, {}).setdefault(str(year), {})[s] = len(matches)
+                for mi, m in enumerate(matches):
                     ref = {"category": cat, "year": year, "series": s, "slug": sl,
-                           "video_id": vid, "t_start": m["t_start"], "t_end": m["t_end"],
+                           "video_id": vid, "mi": mi, "t_start": m["t_start"], "t_end": m["t_end"],
                            "table": m["table"]}
                     for color, team, opp, cy, ck in [
                             ("yellow", m["team_yellow"], m["team_blue"], m["yellow_city"], m["yellow_country"]),
@@ -86,8 +86,12 @@ def main():
 
     for t in teams_idx:
         teams_idx[t].sort(key=lambda a: (a["year"], a["series"], a["t_start"]))
+    def is_us(n): return n.lower().replace("'", "").replace(" ", "") == "cocotter"
+    teams_meta = sorted(
+        ({"name": t, "city": _loc(t)[0], "cat": teams_idx[t][0]["category"], "us": is_us(t)}
+         for t in teams_idx), key=lambda x: x["name"].lower())
     (DATA / "index.json").write_text(json.dumps(
-        {"tree": tree, "teams": sorted(teams_idx), "demo": True},
+        {"tree": tree, "teams": teams_meta, "demo": True},
         ensure_ascii=False, separators=(",", ":")))
     (DATA / "teams.json").write_text(json.dumps(teams_idx, ensure_ascii=False, separators=(",", ":")))
     print(f"demo data: {sum(len(v) for c in tree.values() for v in c.values())} séries, "

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CDR · Replay</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="app">
+  <div id="hdr"></div>
+  <main style="flex:1">
+    <div class="container page">
+      <a class="back" href="index.html">← Accueil</a>
+      <h1 class="page__title page__title--marked" id="title">Édition</h1>
+      <p class="page__sub" id="sub"></p>
+      <div class="tabs" id="tabs"></div>
+      <div class="series-grid" id="grid"></div>
+    </div>
+  </main>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+mountHeader();
+const year = qs("y");
+let TREE = null, cat = null;
+document.getElementById("title").textContent = `Édition ${year}`;
+
+fetchJSON("data/index.json").then((d) => {
+  TREE = d.tree;
+  const cats = ["senior", "junior"].filter((c) => d.tree[c] && d.tree[c][year]);
+  const sub = cats.map((c) => {
+    const n = Object.values(d.tree[c][year]).reduce((a, b) => a + b, 0);
+    return `${n} matches en ${catLabel(c).toLowerCase()}`;
+  }).join(" · ");
+  document.getElementById("sub").textContent = sub;
+  document.getElementById("tabs").innerHTML = cats.map((c) => {
+    const n = Object.values(d.tree[c][year]).reduce((a, b) => a + b, 0);
+    return `<button class="tab" data-c="${c}">${catLabel(c)} <span class="tab__count">${n} matches</span></button>`;
+  }).join("");
+  document.querySelectorAll(".tab").forEach((b) => b.onclick = () => select(b.dataset.c));
+  select(cats[0]);
+});
+
+function select(c) {
+  cat = c;
+  document.querySelectorAll(".tab").forEach((b) => b.classList.toggle("is-active", b.dataset.c === c));
+  const series = TREE[c][year];
+  const reg = Object.keys(series).filter((s) => !isFinale(s)).sort();
+  const fin = Object.keys(series).filter(isFinale);
+  let html = reg.map((s) =>
+    `<a class="series-link" href="series.html?s=${slugOf(c, year, s)}">
+       <div class="series-link__name">Série ${s}</div>
+       <div class="series-link__count">${series[s]} matches</div>
+     </a>`).join("");
+  html += fin.map((s) =>
+    `<a class="series-link series-link--finale" href="series.html?s=${slugOf(c, year, s)}">
+       <div class="series-link__name">Phase finale</div>
+       <div class="series-link__count">${series[s]} matches</div>
+     </a>`).join("");
+  document.getElementById("grid").innerHTML = html;
+}
+</script>
+</body>
+</html>

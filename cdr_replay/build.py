@@ -81,13 +81,11 @@ def build(config_path="config/videos.yaml", ocr_fps=1.0, workers=0):
         (DATA / "series" / f"{sl}.json").write_text(
             json.dumps(out, ensure_ascii=False, separators=(",", ":")))
 
-        tree.setdefault(cat, {}).setdefault(str(year), [])
-        if series not in tree[cat][str(year)]:
-            tree[cat][str(year)].append(series)
+        tree.setdefault(cat, {}).setdefault(str(year), {})[series] = len(matches)
 
-        for m in matches:
+        for mi, m in enumerate(matches):
             ref = {"category": cat, "year": year, "series": series, "slug": sl,
-                   "video_id": vid, "t_start": m["t_start"], "t_end": m["t_end"],
+                   "video_id": vid, "mi": mi, "t_start": m["t_start"], "t_end": m["t_end"],
                    "table": m["table"]}
             pairs = [("yellow", m["team_yellow"], m["team_blue"], m.get("yellow_city"), m.get("yellow_country")),
                      ("blue", m["team_blue"], m["team_yellow"], m.get("blue_city"), m.get("blue_country"))]
@@ -96,15 +94,29 @@ def build(config_path="config/videos.yaml", ocr_fps=1.0, workers=0):
                     teams.setdefault(team, []).append(
                         {**ref, "color": color, "opponent": opp, "city": city, "country": country})
 
-    for cat in tree:
-        for year in tree[cat]:
-            tree[cat][year].sort(key=lambda s: (s.isdigit() == False, s))
     for t in teams:
         teams[t].sort(key=lambda a: (a["year"], a["series"], a["t_start"]))
 
+    teams_meta = [_team_meta(name, apps) for name, apps in teams.items()]
+    teams_meta.sort(key=lambda t: t["name"].lower())
+
     (DATA / "index.json").write_text(json.dumps(
-        {"tree": tree, "teams": sorted(teams)}, ensure_ascii=False, separators=(",", ":")))
+        {"tree": tree, "teams": teams_meta}, ensure_ascii=False, separators=(",", ":")))
     (DATA / "teams.json").write_text(json.dumps(
         teams, ensure_ascii=False, separators=(",", ":")))
-    print(f"\nWrote {DATA} | {sum(len(v) for c in tree.values() for v in c.values())} séries, "
-          f"{len(teams)} équipes")
+    n_series = sum(len(y) for c in tree.values() for y in c.values())
+    print(f"\nWrote {DATA} | {n_series} séries, {len(teams)} équipes")
+
+
+def _mode(vals):
+    vals = [v for v in vals if v]
+    return max(set(vals), key=vals.count) if vals else None
+
+
+def _is_us(name):
+    return overlay._normalize(name) in ("COCOTTER", "COC OTTER")
+
+
+def _team_meta(name, apps):
+    return {"name": name, "city": _mode(a.get("city") for a in apps),
+            "cat": _mode(a.get("category") for a in apps), "us": _is_us(name)}

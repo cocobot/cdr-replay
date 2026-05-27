@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CDR · Replay</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="app">
+  <div id="hdr"></div>
+  <main style="flex:1">
+    <div class="container page">
+      <a class="back" id="back" href="index.html">← Accueil</a>
+      <h1 class="page__title page__title--marked" id="title">Série</h1>
+      <p class="page__sub" id="sub"></p>
+      <div class="match-list" id="list"></div>
+    </div>
+  </main>
+</div>
+
+<script src="assets/app.js"></script>
+<script>
+mountHeader();
+const slug = qs("s");
+
+fetchJSON(`data/series/${slug}.json`).then((d) => {
+  const label = isFinale(d.series) ? "Phase finale" : seriesLabel(d.series);
+  document.title = `CDR · ${label} ${d.category} ${d.year}`;
+  document.getElementById("title").textContent = label;
+  document.getElementById("sub").textContent = `${catLabel(d.category)} · ${d.year} · ${d.matches.length} matches`;
+  document.getElementById("back").href = `year.html?y=${d.year}`;
+  document.getElementById("back").textContent = `← Édition ${d.year}`;
+
+  document.getElementById("list").innerHTML = d.matches.map((m, i) => {
+    const no = isFinale(d.series) ? "F" + (i + 1) : "M" + String(i + 1).padStart(2, "0");
+    return `<a class="match-row" href="match.html?s=${slug}&i=${i}">
+      <span class="match-row__no">${no}</span>
+      <span class="match-row__teams">${teamSpan(m.team_yellow)}<span class="vs">vs</span>${teamSpan(m.team_blue)}</span>
+      <span class="match-row__score">Table ${esc(m.table || "?")}</span>
+      <span class="match-row__dur">${fmt(m.t_start)}</span>
+    </a>`;
+  }).join("") || `<div class="match-row"><span class="match-row__teams" style="color:var(--muted)">Aucun match détecté.</span></div>`;
+}).catch(() => {
+  document.getElementById("title").textContent = "Série introuvable";
+});
+</script>
+</body>
+</html>

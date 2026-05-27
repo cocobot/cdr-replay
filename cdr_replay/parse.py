@@ -134,19 +134,33 @@ def _mode_country(reads):
     return Counter(snapped).most_common(1)[0][0] if snapped else None
 
 
-def _resolve_teams(ys, bs, tail=15):
+def _resolve_pair(ys, bs, tail=15):
+    """Return (yellow_cluster, blue_cluster) of the two teams. Colour assignment
+    follows the LATEST overlay state (broadcasters fix a wrong banner mid-match)."""
     ysf = [r for r in ys if r]
     bsf = [r for r in bs if r]
     clusters = _cluster(Counter(ysf) + Counter(bsf))
     if not clusters:
         return None, None
     if len(clusters) == 1:
-        return clusters[0]["rep"], None
+        return clusters[0], None
     ca, cb = clusters[0], clusters[1]
     recent = ysf[-tail:]
     a = sum(1 for r in recent if r in ca["members"])
     b = sum(1 for r in recent if r in cb["members"])
-    return (ca["rep"], cb["rep"]) if a >= b else (cb["rep"], ca["rep"])
+    return (ca, cb) if a >= b else (cb, ca)
+
+
+def _loc_for(cluster, team_cities, team_countries):
+    """City/country of a team, gathered by the team NAME read (side-independent,
+    so a mid-match left/right swap doesn't mix the two teams' cities)."""
+    if not cluster:
+        return None, None
+    cities, countries = [], []
+    for tr in cluster["members"]:
+        cities += team_cities.get(tr, [])
+        countries += team_countries.get(tr, [])
+    return _mode_city(cities), _mode_country(countries)
 
 
 def _same_pair(a, b):
@@ -189,25 +203,34 @@ def _segment(samples):
         same = cur is not None and cur["table"] == table and t - last_t <= MATCH_BRIDGE_S
         if not same:
             cur = {"table": table, "start": t, "end": t, "ys": [], "bs": [],
-                   "cy": [], "ky": [], "cb": [], "kb": [], "countdown": None}
+                   "tc": {}, "tk": {}, "countdown": None}
             segments.append(cur)
         cur["end"] = t
-        if s["yellow"]: cur["ys"].append(s["yellow"])
-        if s["blue"]: cur["bs"].append(s["blue"])
-        for key, sk in (("cy", "city_y"), ("ky", "country_y"), ("cb", "city_b"), ("kb", "country_b")):
-            if s.get(sk): cur[key].append(s[sk])
+        # Tie city/country to the team NAME read on each side at this instant.
+        if s["yellow"]:
+            cur["ys"].append(s["yellow"])
+            if s.get("city_y"): cur["tc"].setdefault(s["yellow"], []).append(s["city_y"])
+            if s.get("country_y"): cur["tk"].setdefault(s["yellow"], []).append(s["country_y"])
+        if s["blue"]:
+            cur["bs"].append(s["blue"])
+            if s.get("city_b"): cur["tc"].setdefault(s["blue"], []).append(s["city_b"])
+            if s.get("country_b"): cur["tk"].setdefault(s["blue"], []).append(s["country_b"])
         if s["timer"] and cur["countdown"] is None:   # first running countdown
             cur["countdown"] = t
         last_t = t
     matches = []
     for seg in segments:
-        ty, tb = _resolve_teams(seg["ys"], seg["bs"])
+        yc, bc = _resolve_pair(seg["ys"], seg["bs"])
+        ycity, ycountry = _loc_for(yc, seg["tc"], seg["tk"])
+        bcity, bcountry = _loc_for(bc, seg["tc"], seg["tk"])
         # Start the clip 3s before the countdown starts (skip the presentation),
         # falling back to the banner start if no countdown was read.
         start = seg["countdown"] - PRE_ROLL_S if seg["countdown"] is not None else seg["start"]
-        matches.append({"table": seg["table"], "team_yellow": ty, "team_blue": tb,
-                        "yellow_city": _mode_city(seg["cy"]), "yellow_country": _mode_country(seg["ky"]),
-                        "blue_city": _mode_city(seg["cb"]), "blue_country": _mode_country(seg["kb"]),
+        matches.append({"table": seg["table"],
+                        "team_yellow": yc["rep"] if yc else None,
+                        "team_blue": bc["rep"] if bc else None,
+                        "yellow_city": ycity, "yellow_country": ycountry,
+                        "blue_city": bcity, "blue_country": bcountry,
                         "t_start": round(max(0.0, start), 1),
                         "t_end": round(seg["end"], 1)})
     matches = _merge_fragments(matches)
