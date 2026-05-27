@@ -135,7 +135,7 @@ input { font: inherit; color: inherit; }
 /* ============================================================
    PAGE
 ============================================================ */
-.page { padding: 32px 0 80px; }
+.page { padding-top: 32px; padding-bottom: 80px; }   /* keep .container's horizontal padding */
 
 .page__title {
   font-family: var(--display);
@@ -678,11 +678,28 @@ input { font: inherit; color: inherit; }
    RESPONSIVE
 ============================================================ */
 @media (max-width: 720px) {
+  html, body { overflow-x: hidden; }
+  .container { padding: 0 16px; }
+  .site-header__inner { gap: 10px; padding: 10px 16px; }
+  .brand { font-size: 15px; }
+  .brand small { font-size: 15px; }
+  .search { min-width: 0; flex: 1; }
+  .page { padding-top: 22px; padding-bottom: 56px; }
+  .page__title { font-size: clamp(24px, 7vw, 32px); line-height: 1; overflow-wrap: anywhere; }
+  .page__title--marked::after { right: -4px; height: 8px; }
+  .page__sub { font-size: 17px; }
   .team-list { grid-template-columns: 1fr; }
   .team-link { border-right: none !important; }
-  .series-grid { grid-template-columns: repeat(2, 1fr); }
+  .series-grid { grid-template-columns: 1fr 1fr; }
   .series-link--finale { grid-column: span 2; }
-  .match-row { grid-template-columns: 36px 1fr auto; gap: 8px; padding: 8px 12px; }
-  .match-row__dur { display: none; }
-  .search { min-width: 0; flex: 1; }
+  .match-row { grid-template-columns: 30px 1fr auto; gap: 8px; padding: 9px 11px; }
+  .match-row__score { display: none; }   /* hide table pill on narrow; keep time */
+  .match-head__teams { font-size: 20px; }
+  .match-head__teams .vs { font-size: 22px; }
+  .match-meta { gap: 8px 12px; }
+}
+/* Tighter still on very small phones */
+@media (max-width: 400px) {
+  .page__title { font-size: 23px; }
+  .year-btn { font-size: 16px; padding: 9px 14px; }
 }
