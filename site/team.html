@@ -33,8 +33,11 @@ fetchJSON("data/teams.json").then((teams) => {
   document.getElementById("team").textContent = team || "Équipe inconnue";
   document.getElementById("avatar").textContent = ((team || "?").trim()[0] || "?").toUpperCase();
   const cats = [...new Set(apps.map((a) => a.category))];
-  document.getElementById("summary").textContent =
-    `${apps.length} match${apps.length > 1 ? "s" : ""} · ${cats.join(", ") || "—"}`;
+  const mode = (arr) => { const c = {}; let best = null, bn = 0; arr.forEach((x) => { if (!x) return; c[x] = (c[x] || 0) + 1; if (c[x] > bn) { bn = c[x]; best = x; } }); return best; };
+  const loc = [mode(apps.map((a) => a.city)), mode(apps.map((a) => a.country))].filter(Boolean).join(", ");
+  document.getElementById("summary").innerHTML =
+    `${apps.length} match${apps.length > 1 ? "s" : ""} · ${cats.join(", ") || "—"}` +
+    (loc ? ` &nbsp;·&nbsp; <span style="color:var(--teal)">📍 ${loc}</span>` : "");
   document.getElementById("list").innerHTML = apps.map((a) => {
     const opp = a.opponent || "?";
     const colorCls = a.color === "yellow" ? "y" : "b";

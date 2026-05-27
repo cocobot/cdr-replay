@@ -89,11 +89,12 @@ def build(config_path="config/videos.yaml", ocr_fps=1.0, workers=0):
             ref = {"category": cat, "year": year, "series": series, "slug": sl,
                    "video_id": vid, "t_start": m["t_start"], "t_end": m["t_end"],
                    "table": m["table"]}
-            pairs = [("yellow", m["team_yellow"], m["team_blue"]),
-                     ("blue", m["team_blue"], m["team_yellow"])]
-            for color, team, opp in pairs:
+            pairs = [("yellow", m["team_yellow"], m["team_blue"], m.get("yellow_city"), m.get("yellow_country")),
+                     ("blue", m["team_blue"], m["team_yellow"], m.get("blue_city"), m.get("blue_country"))]
+            for color, team, opp, city, country in pairs:
                 if team:
-                    teams.setdefault(team, []).append({**ref, "color": color, "opponent": opp})
+                    teams.setdefault(team, []).append(
+                        {**ref, "color": color, "opponent": opp, "city": city, "country": country})
 
     for cat in tree:
         for year in tree[cat]:

@@ -22,6 +22,17 @@ JUNIOR = ["Les Petits Bots", "RoboLycée", "Mini Watt", "Cogip Junior", "Les Eng
           "Servo Squad", "Boulons & Co", "Les Roues Libres", "Capteurs Fous",
           "Junior Spark", "Méca Mômes", "Bit & Boulon", "Les Disjoncteurs"]
 
+CITIES = ["Paris", "Lyon", "Toulouse", "Bordeaux", "Nantes", "Lille", "Amiens",
+          "Grenoble", "Rennes", "Strasbourg", "Nice", "Montpellier", "Brest",
+          "Clermont-Ferrand", "Orléans", "Le Mans", "Vannes", "Cachan", "Riom"]
+CITY = {}  # team -> (city, country), stable
+def _loc(team):
+    if team not in CITY:
+        c = CITIES[abs(hash(team)) % len(CITIES)]
+        country = "Belgique" if abs(hash(team)) % 11 == 0 else "France"
+        CITY[team] = (c, country)
+    return CITY[team]
+
 STRUCT = {
     "senior": {2024: ["1", "2", "3", "4", "5", "finales"],
                2025: ["1", "2", "3", "4", "5", "finales"],
@@ -37,8 +48,12 @@ def gen_matches(pool, n):
     out = []
     for i in range(min(n, len(teams) // 2)):
         dur = random.randint(95, 150)
+        y, b = teams[2 * i], teams[2 * i + 1]
+        (yc, yk), (bc, bk) = _loc(y), _loc(b)
         out.append({"table": str(random.randint(1, 6)),
-                    "team_yellow": teams[2 * i], "team_blue": teams[2 * i + 1],
+                    "team_yellow": y, "team_blue": b,
+                    "yellow_city": yc, "yellow_country": yk,
+                    "blue_city": bc, "blue_country": bk,
                     "t_start": float(t), "t_end": float(t + dur)})
         t += dur + random.randint(120, 260)
     return out
@@ -63,9 +78,11 @@ def main():
                     ref = {"category": cat, "year": year, "series": s, "slug": sl,
                            "video_id": vid, "t_start": m["t_start"], "t_end": m["t_end"],
                            "table": m["table"]}
-                    for color, team, opp in [("yellow", m["team_yellow"], m["team_blue"]),
-                                             ("blue", m["team_blue"], m["team_yellow"])]:
-                        teams_idx.setdefault(team, []).append({**ref, "color": color, "opponent": opp})
+                    for color, team, opp, cy, ck in [
+                            ("yellow", m["team_yellow"], m["team_blue"], m["yellow_city"], m["yellow_country"]),
+                            ("blue", m["team_blue"], m["team_yellow"], m["blue_city"], m["blue_country"])]:
+                        teams_idx.setdefault(team, []).append(
+                            {**ref, "color": color, "opponent": opp, "city": cy, "country": ck})
 
     for t in teams_idx:
         teams_idx[t].sort(key=lambda a: (a["year"], a["series"], a["t_start"]))

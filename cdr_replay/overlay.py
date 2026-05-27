@@ -37,6 +37,12 @@ class OverlayConfig:
     # match countdown "M:SS", centered under the table pill
     timer_region: tuple = (580, 668, 680, 703)
     timer_thresh: int = 170
+    # city / country subtitle (classic font, under each team name) — Tesseract
+    city_yellow: tuple = (8, 620, 360, 650)
+    city_blue: tuple = (888, 620, 1268, 650)
+    country_yellow: tuple = (8, 650, 360, 680)
+    country_blue: tuple = (888, 650, 1268, 680)
+    city_thresh: int = 205
     # banner-presence probe: flat desaturated grey bars behind the two names
     banner_regions: tuple = ((10, 596, 340, 648), (940, 596, 1270, 648))
     banner_min: float = 0.5
@@ -197,6 +203,51 @@ def read_timer(frame, templates, cfg=DEFAULT):
         return None
     d = "".join(digits)[-3:]
     return f"{d[0]}:{d[1:]}"
+
+
+# Countries seen at the Coupe de France de Robotique / Eurobot (French names).
+COUNTRIES = ["France", "Belgique", "Suisse", "Allemagne", "Tunisie", "Maroc",
+             "Espagne", "Italie", "Mexique", "Pologne", "Tchéquie", "Slovénie",
+             "Roumanie", "Pays-Bas", "Royaume-Uni", "Portugal", "Brésil", "Colombie"]
+
+
+def _ocr_line(frame, region, thresh, otsu=False):
+    import pytesseract
+    x1, y1, x2, y2 = region
+    crop = frame[y1:y2, x1:x2]
+    big = cv2.resize(crop, (crop.shape[1] * 4, crop.shape[0] * 4), interpolation=cv2.INTER_CUBIC)
+    gray = cv2.cvtColor(big, cv2.COLOR_BGR2GRAY)
+    flag = cv2.THRESH_BINARY + (cv2.THRESH_OTSU if otsu else 0)
+    _, th = cv2.threshold(gray, 0 if otsu else thresh, 255, flag)
+    return pytesseract.image_to_string(th, config="--psm 7").strip()
+
+
+def read_city(frame, side, cfg=DEFAULT):
+    """City under a team name (white text on the banner). Tesseract — classic font."""
+    region = cfg.city_yellow if side == "yellow" else cfg.city_blue
+    t = re.sub(r"[^0-9A-Za-zÀ-ÿ' .-]", "", _ocr_line(frame, region, cfg.city_thresh))
+    t = re.sub(r"\s+", " ", t).strip(" .-'")
+    return t or None
+
+
+def read_country_raw(frame, side, cfg=DEFAULT):
+    """Raw country read (low-contrast grey text). Snap+vote done by the caller."""
+    region = cfg.country_yellow if side == "yellow" else cfg.country_blue
+    raw = _ocr_line(frame, region, 0, otsu=True) or _ocr_line(frame, region, cfg.city_thresh)
+    return re.sub(r"[^A-Za-zÀ-ÿ-]", "", raw).strip() or None
+
+
+def snap_country(raw):
+    """Snap a noisy country read to the known list (handles dropped first letter)."""
+    if not raw:
+        return None
+    q = _normalize(raw)
+    best, bs = None, 0.0
+    for c in COUNTRIES:
+        r = SequenceMatcher(None, q, _normalize(c)).ratio()
+        if r > bs:
+            bs, best = r, c
+    return best if bs >= 0.55 else None
 
 
 def read_table(frame, cfg=DEFAULT):

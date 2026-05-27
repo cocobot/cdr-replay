@@ -62,6 +62,10 @@ def _sample_chunk(args):
                 "yellow": overlay.read_team(frame, "yellow", _TEMPLATES, _CFG),
                 "blue": overlay.read_team(frame, "blue", _TEMPLATES, _CFG),
                 "timer": overlay.read_timer(frame, _TEMPLATES, _CFG),
+                "city_y": overlay.read_city(frame, "yellow", _CFG),
+                "country_y": overlay.read_country_raw(frame, "yellow", _CFG),
+                "city_b": overlay.read_city(frame, "blue", _CFG),
+                "country_b": overlay.read_country_raw(frame, "blue", _CFG),
             })
         idx += 1
     cap.release()
@@ -116,6 +120,20 @@ def _cluster(counter):
     return sorted(clusters, key=lambda c: -c["total"])
 
 
+def _mode_city(reads):
+    reads = [r for r in reads if r]
+    if not reads:
+        return None
+    clusters = _cluster(Counter(reads))
+    return clusters[0]["rep"] if clusters else None
+
+
+def _mode_country(reads):
+    snapped = [overlay.snap_country(r) for r in reads if r]
+    snapped = [s for s in snapped if s]
+    return Counter(snapped).most_common(1)[0][0] if snapped else None
+
+
 def _resolve_teams(ys, bs, tail=15):
     ysf = [r for r in ys if r]
     bsf = [r for r in bs if r]
@@ -150,7 +168,10 @@ def _merge_fragments(matches):
                 cand = p
         if cand:
             cand["t_end"] = max(cand["t_end"], m["t_end"])
-            cand["team_yellow"], cand["team_blue"] = m["team_yellow"], m["team_blue"]
+            for k in ("team_yellow", "team_blue", "yellow_city", "yellow_country",
+                      "blue_city", "blue_country"):
+                if m.get(k):
+                    cand[k] = m[k]
         else:
             merged.append(dict(m))
     return merged
@@ -168,11 +189,13 @@ def _segment(samples):
         same = cur is not None and cur["table"] == table and t - last_t <= MATCH_BRIDGE_S
         if not same:
             cur = {"table": table, "start": t, "end": t, "ys": [], "bs": [],
-                   "countdown": None}
+                   "cy": [], "ky": [], "cb": [], "kb": [], "countdown": None}
             segments.append(cur)
         cur["end"] = t
         if s["yellow"]: cur["ys"].append(s["yellow"])
         if s["blue"]: cur["bs"].append(s["blue"])
+        for key, sk in (("cy", "city_y"), ("ky", "country_y"), ("cb", "city_b"), ("kb", "country_b")):
+            if s.get(sk): cur[key].append(s[sk])
         if s["timer"] and cur["countdown"] is None:   # first running countdown
             cur["countdown"] = t
         last_t = t
@@ -183,6 +206,8 @@ def _segment(samples):
         # falling back to the banner start if no countdown was read.
         start = seg["countdown"] - PRE_ROLL_S if seg["countdown"] is not None else seg["start"]
         matches.append({"table": seg["table"], "team_yellow": ty, "team_blue": tb,
+                        "yellow_city": _mode_city(seg["cy"]), "yellow_country": _mode_country(seg["ky"]),
+                        "blue_city": _mode_city(seg["cb"]), "blue_country": _mode_country(seg["kb"]),
                         "t_start": round(max(0.0, start), 1),
                         "t_end": round(seg["end"], 1)})
     matches = _merge_fragments(matches)
