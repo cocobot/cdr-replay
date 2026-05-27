@@ -53,7 +53,7 @@ def slug(category, year, series):
     return f"{category}_{year}_{re.sub(r'[^A-Za-z0-9]', '', str(series))}"
 
 
-def build(config_path="config/videos.yaml", ocr_fps=1.0, workers=0):
+def build(config_path="config/videos.yaml", ocr_fps=1.0, workers=0, cleanup=False):
     cfg_path = ROOT / config_path
     cfg = yaml.safe_load(cfg_path.read_text(encoding="utf-8"))
     templates = overlay.load_templates(TEMPLATES_NPZ)
@@ -74,6 +74,8 @@ def build(config_path="config/videos.yaml", ocr_fps=1.0, workers=0):
         matches, duration = parse.parse_video(
             str(path), templates, roster=roster, ocr_fps=ocr_fps, workers=workers)
         print(f"  -> {len(matches)} matchs")
+        if cleanup:                       # free disk for the next download
+            path.unlink(missing_ok=True)
 
         sl = slug(cat, year, series)
         out = {"category": cat, "year": year, "series": series,
