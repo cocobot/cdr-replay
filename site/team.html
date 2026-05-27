@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CDR Replay — équipe</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="hdr"></div>
+<main class="wrap">
+  <div id="crumbs" class="crumbs"></div>
+  <h1 class="hero" id="team">—</h1>
+  <p class="hero-sub" id="summary"></p>
+  <div id="list" class="match-list" style="max-height:none"></div>
+</main>
+<footer>cocobot/cdr-replay</footer>
+
+<script src="assets/app.js"></script>
+<script>
+document.getElementById("hdr").innerHTML = header();
+const team = qs("team");
+document.getElementById("crumbs").innerHTML = `<a href="index.html">Accueil</a> › Équipe`;
+
+fetchJSON("data/teams.json").then((teams) => {
+  const apps = teams[team] || [];
+  document.getElementById("team").textContent = team || "Équipe inconnue";
+  const cats = [...new Set(apps.map((a) => a.category))];
+  document.getElementById("summary").textContent =
+    `${apps.length} match${apps.length > 1 ? "s" : ""} · ${cats.join(", ") || "—"}`;
+  document.getElementById("list").innerHTML = apps.map((a) => {
+    const opp = a.opponent || "?";
+    const colorCls = a.color === "yellow" ? "y" : "b";
+    return `<a class="match" href="viewer.html?s=${a.slug}&t=${a.t_start}">
+      <div class="teams"><span class="tname ${colorCls}">${team}</span> <span class="vs">vs</span> <span class="tname ${a.color === 'yellow' ? 'b' : 'y'}">${opp}</span></div>
+      <div class="meta">
+        <span class="pill">${a.category} ${a.year}</span>
+        <span class="pill">${seriesLabel(a.series)}</span>
+        <span class="pill">Table ${a.table || "?"}</span>
+        <span>⏱ ${fmt(a.t_start)}</span>
+      </div>
+    </a>`;
+  }).join("") || `<div class="empty">Aucun match trouvé pour cette équipe.</div>`;
+}).catch(() => {
+  document.getElementById("list").innerHTML = `<div class="empty">Données indisponibles.</div>`;
+});
+</script>
+</body>
+</html>

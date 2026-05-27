@@ -1,0 +1,6 @@
+# Generator dependencies (the site itself is plain static files).
+opencv-python-headless>=4.8
+numpy>=1.24
+pytesseract>=0.3.10      # also needs the `tesseract` binary installed
+PyYAML>=6.0
+yt-dlp>=2024.0

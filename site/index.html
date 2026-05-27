@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CDR Replay — matchs de la Coupe de France de Robotique</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="hdr"></div>
+<main class="wrap">
+  <h1 class="hero">Revivez les matchs de la Coupe de France de Robotique</h1>
+  <p class="hero-sub">Choisissez une catégorie et une année, puis une série — ou cherchez une équipe.</p>
+
+  <div id="cat" class="seg"></div>
+
+  <div class="section-label">Année</div>
+  <div id="years" class="chips"></div>
+
+  <div class="section-label">Séries</div>
+  <div id="series" class="grid"></div>
+
+  <div class="section-label">Rechercher une équipe</div>
+  <div class="search">
+    <input id="q" type="text" placeholder="Nom d'équipe…" autocomplete="off">
+    <div id="ac" class="ac" style="display:none"></div>
+  </div>
+</main>
+<footer>cocobot/cdr-replay — données extraites automatiquement du flux de diffusion.</footer>
+
+<script src="assets/app.js"></script>
+<script>
+document.getElementById("hdr").innerHTML = header();
+let DATA, cat = null, year = null;
+
+fetchJSON("data/index.json").then((d) => {
+  DATA = d;
+  const cats = Object.keys(d.tree);
+  const order = ["senior", "junior"].filter((c) => cats.includes(c)).concat(cats.filter((c) => !["senior","junior"].includes(c)));
+  document.getElementById("cat").innerHTML = order.map((c) =>
+    `<button data-c="${c}">${c[0].toUpperCase() + c.slice(1)}</button>`).join("");
+  document.querySelectorAll("#cat button").forEach((b) =>
+    b.onclick = () => selectCat(b.dataset.c));
+  selectCat(order[0]);
+  setupSearch(d.teams);
+});
+
+function selectCat(c) {
+  cat = c;
+  document.querySelectorAll("#cat button").forEach((b) => b.classList.toggle("active", b.dataset.c === c));
+  const years = Object.keys(DATA.tree[c]).sort().reverse();
+  document.getElementById("years").innerHTML = years.map((y) =>
+    `<div class="chip" data-y="${y}">${y}</div>`).join("");
+  document.querySelectorAll("#years .chip").forEach((ch) =>
+    ch.onclick = () => selectYear(ch.dataset.y));
+  selectYear(years[0]);
+}
+
+function selectYear(y) {
+  year = y;
+  document.querySelectorAll("#years .chip").forEach((ch) => ch.classList.toggle("active", ch.dataset.y === y));
+  const series = DATA.tree[cat][y];
+  document.getElementById("series").innerHTML = series.map((s) => {
+    const slug = slugOf(cat, y, s);
+    return `<a class="card" href="viewer.html?s=${slug}">
+      <span class="corner"></span>
+      <div class="big">${seriesLabel(s)}</div>
+      <div class="sub">${cat} · ${y}</div>
+    </a>`;
+  }).join("") || `<div class="empty">Aucune série</div>`;
+}
+
+function setupSearch(teams) {
+  const q = document.getElementById("q"), ac = document.getElementById("ac");
+  let sel = -1, shown = [];
+  function render() {
+    const v = q.value.trim().toLowerCase();
+    shown = v ? teams.filter((t) => t.toLowerCase().includes(v)).slice(0, 12) : [];
+    sel = -1;
+    ac.style.display = shown.length ? "block" : "none";
+    ac.innerHTML = shown.map((t, i) => `<div data-i="${i}">${t}</div>`).join("");
+    ac.querySelectorAll("div").forEach((d) =>
+      d.onclick = () => location.href = `team.html?team=${encodeURIComponent(shown[d.dataset.i])}`);
+  }
+  q.addEventListener("input", render);
+  q.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowDown") sel = Math.min(sel + 1, shown.length - 1);
+    else if (e.key === "ArrowUp") sel = Math.max(sel - 1, 0);
+    else if (e.key === "Enter" && shown.length) {
+      location.href = `team.html?team=${encodeURIComponent(shown[Math.max(0, sel)])}`; return;
+    } else return;
+    ac.querySelectorAll("div").forEach((d, i) => d.classList.toggle("sel", i === sel));
+    e.preventDefault();
+  });
+}
+</script>
+</body>
+</html>

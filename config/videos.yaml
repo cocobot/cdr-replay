@@ -1,0 +1,13 @@
+# Streams to parse, mapped to category / year / series.
+#   category: senior | junior
+#   series:   "1".."5" then "finales"
+# The generator downloads each (yt-dlp, 720p) to .cache/, parses the overlay
+# into matches, and the site embeds the YouTube video.
+
+roster: config/teams.txt        # optional: snap team names to this list (senior)
+
+videos:
+  - {category: senior, year: 2026, series: "3", youtube: "https://www.youtube.com/watch?v=ISvunlsdgDo"}
+  - {category: senior, year: 2026, series: "4", youtube: "https://www.youtube.com/watch?v=jrfmvH_gVxM"}
+  - {category: junior, year: 2026, series: "2", youtube: "https://www.youtube.com/watch?v=sQ4mJ8B3J3o"}
+  - {category: junior, year: 2026, series: "3", youtube: "https://www.youtube.com/watch?v=cMHJf1s85q4"}
