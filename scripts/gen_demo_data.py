@@ -1,0 +1,81 @@
+#!/usr/bin/env python3
+"""Generate DEMO (fake) site data so the site can be reviewed before real parsing.
+
+Overwritten by `python -m cdr_replay build` once videos are parsed for real.
+Teams recur across years so the "matchs d'une équipe à travers les ans" view is
+populated. Embeds reuse the few real YouTube ids we have so videos load.
+"""
+
+import json
+import random
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / "site" / "data"
+random.seed(7)
+
+VIDS = ["ISvunlsdgDo", "jrfmvH_gVxM", "sQ4mJ8B3J3o", "cMHJf1s85q4"]  # real ids -> embeds load
+
+SENIOR = [l.strip() for l in (ROOT / "config/teams.txt").read_text(encoding="utf-8").splitlines() if l.strip()]
+JUNIOR = ["Les Petits Bots", "RoboLycée", "Mini Watt", "Cogip Junior", "Les Engrenages",
+          "TechnoKids", "Robot'Col", "Volt Académie", "Les Automates", "Pixel Méca",
+          "Servo Squad", "Boulons & Co", "Les Roues Libres", "Capteurs Fous",
+          "Junior Spark", "Méca Mômes", "Bit & Boulon", "Les Disjoncteurs"]
+
+STRUCT = {
+    "senior": {2024: ["1", "2", "3", "4", "5", "finales"],
+               2025: ["1", "2", "3", "4", "5", "finales"],
+               2026: ["1", "2", "3", "4", "5", "finales"]},
+    "junior": {2025: ["1", "2", "3", "finales"],
+               2026: ["1", "2", "3", "finales"]},
+}
+
+
+def gen_matches(pool, n):
+    teams = random.sample(pool, min(len(pool), n * 2))
+    t = random.randint(120, 320)
+    out = []
+    for i in range(min(n, len(teams) // 2)):
+        dur = random.randint(95, 150)
+        out.append({"table": str(random.randint(1, 6)),
+                    "team_yellow": teams[2 * i], "team_blue": teams[2 * i + 1],
+                    "t_start": float(t), "t_end": float(t + dur)})
+        t += dur + random.randint(120, 260)
+    return out
+
+
+def main():
+    (DATA / "series").mkdir(parents=True, exist_ok=True)
+    tree, teams_idx, vi = {}, {}, 0
+    for cat, years in STRUCT.items():
+        pool = SENIOR if cat == "senior" else JUNIOR
+        for year, series in years.items():
+            for s in series:
+                matches = gen_matches(pool, 6 if s != "finales" else 4)
+                vid = VIDS[vi % len(VIDS)]; vi += 1
+                sl = f"{cat}_{year}_{s}"
+                (DATA / "series" / f"{sl}.json").write_text(json.dumps(
+                    {"category": cat, "year": year, "series": s, "video_id": vid,
+                     "duration_s": 7200.0, "matches": matches},
+                    ensure_ascii=False, separators=(",", ":")))
+                tree.setdefault(cat, {}).setdefault(str(year), []).append(s)
+                for m in matches:
+                    ref = {"category": cat, "year": year, "series": s, "slug": sl,
+                           "video_id": vid, "t_start": m["t_start"], "t_end": m["t_end"],
+                           "table": m["table"]}
+                    for color, team, opp in [("yellow", m["team_yellow"], m["team_blue"]),
+                                             ("blue", m["team_blue"], m["team_yellow"])]:
+                        teams_idx.setdefault(team, []).append({**ref, "color": color, "opponent": opp})
+
+    for t in teams_idx:
+        teams_idx[t].sort(key=lambda a: (a["year"], a["series"], a["t_start"]))
+    (DATA / "index.json").write_text(json.dumps(
+        {"tree": tree, "teams": sorted(teams_idx), "demo": True},
+        ensure_ascii=False, separators=(",", ":")))
+    (DATA / "teams.json").write_text(json.dumps(teams_idx, ensure_ascii=False, separators=(",", ":")))
+    print(f"demo data: {sum(len(v) for c in tree.values() for v in c.values())} séries, "
+          f"{len(teams_idx)} équipes")
+
+
+if __name__ == "__main__":
+    main()

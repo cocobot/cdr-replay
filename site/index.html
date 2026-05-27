@@ -12,6 +12,11 @@
   <h1 class="hero">Revivez les matchs de la Coupe de France de Robotique</h1>
   <p class="hero-sub">Choisissez une catégorie et une année, puis une série — ou cherchez une équipe.</p>
 
+  <div id="demo" style="display:none;background:#3a2e12;border:1px solid #6b5418;color:#ffce3a;
+    padding:10px 16px;border-radius:10px;margin-bottom:22px;font-size:14px">
+    ⚠️ Données de <b>démonstration</b> (factices) — le parsing réel des vidéos sera fait ensuite.
+  </div>
+
   <div id="cat" class="seg"></div>
 
   <div class="section-label">Année</div>
@@ -35,6 +40,7 @@ let DATA, cat = null, year = null;
 
 fetchJSON("data/index.json").then((d) => {
   DATA = d;
+  if (d.demo) document.getElementById("demo").style.display = "block";
   const cats = Object.keys(d.tree);
   const order = ["senior", "junior"].filter((c) => cats.includes(c)).concat(cats.filter((c) => !["senior","junior"].includes(c)));
   document.getElementById("cat").innerHTML = order.map((c) =>
