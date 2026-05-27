@@ -76,7 +76,8 @@ def _git_publish(msg):
         print(f"  (git publish failed: {e})")
 
 
-def build(config_path="config/videos.yaml", ocr_fps=1.0, workers=0, cleanup=False, publish=False):
+def build(config_path="config/videos.yaml", ocr_fps=1.0, workers=0,
+          cleanup=False, publish=False, resume=False):
     cfg_path = ROOT / config_path
     cfg = yaml.safe_load(cfg_path.read_text(encoding="utf-8"))
     templates = overlay.load_templates(TEMPLATES_NPZ)
@@ -86,24 +87,35 @@ def build(config_path="config/videos.yaml", ocr_fps=1.0, workers=0, cleanup=Fals
         if rp.exists():
             roster = overlay.load_roster(rp)
 
-    # Start clean: drop any previous (e.g. demo) data so only real parsed data remains.
     (DATA / "series").mkdir(parents=True, exist_ok=True)
-    for f in (DATA / "series").glob("*.json"):
-        f.unlink()
-    tree, teams = {}, {}
+    if resume:                            # keep what's done; only fill the gaps
+        ix = DATA / "index.json"
+        tree = json.loads(ix.read_text())["tree"] if ix.exists() else {}
+        tj = DATA / "teams.json"
+        teams = json.loads(tj.read_text()) if tj.exists() else {}
+    else:                                 # fresh: drop any previous (demo) data
+        for f in (DATA / "series").glob("*.json"):
+            f.unlink()
+        tree, teams = {}, {}
 
     for v in cfg["videos"]:
         cat, year, series = v["category"], v["year"], str(v["series"])
         vid = video_id(v["youtube"])
+        sl = slug(cat, year, series)
+        if resume and (DATA / "series" / f"{sl}.json").exists():
+            print(f"[{cat} {year} série {series}] {vid} — déjà fait, skip")
+            continue
         print(f"[{cat} {year} série {series}] {vid}")
-        path = ensure_download(v["youtube"])
-        matches, duration = parse.parse_video(
-            str(path), templates, roster=roster, ocr_fps=ocr_fps, workers=workers)
+        try:
+            path = ensure_download(v["youtube"])
+            matches, duration = parse.parse_video(
+                str(path), templates, roster=roster, ocr_fps=ocr_fps, workers=workers)
+        except Exception as e:            # bad download / parse -> skip, keep going
+            print(f"  ! échec, on saute: {e}")
+            continue
         print(f"  -> {len(matches)} matchs")
         if cleanup:                       # free disk for the next download
             path.unlink(missing_ok=True)
-
-        sl = slug(cat, year, series)
         out = {"category": cat, "year": year, "series": series,
                "video_id": vid, "duration_s": duration, "matches": matches}
         (DATA / "series" / f"{sl}.json").write_text(

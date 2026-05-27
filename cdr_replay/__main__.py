@@ -22,6 +22,7 @@ def main(argv=None):
     b.add_argument("--workers", type=int, default=0)
     b.add_argument("--cleanup", action="store_true", help="delete each video after parsing")
     b.add_argument("--publish", action="store_true", help="git commit + push site/data after each video")
+    b.add_argument("--resume", action="store_true", help="keep existing data, only parse missing series")
 
     t = sub.add_parser("templates", help="build glyph templates from a font specimen")
     t.add_argument("specimen", help="dafont glyph-map PNG of the Ethnocentric font")
@@ -29,7 +30,7 @@ def main(argv=None):
     args = ap.parse_args(argv)
     if args.cmd == "build":
         build_mod.build(args.config, ocr_fps=args.ocr_fps, workers=args.workers,
-                        cleanup=args.cleanup, publish=args.publish)
+                        cleanup=args.cleanup, publish=args.publish, resume=args.resume)
     elif args.cmd == "templates":
         out = Path(__file__).resolve().parent / "data" / "templates.npz"
         out.parent.mkdir(parents=True, exist_ok=True)
