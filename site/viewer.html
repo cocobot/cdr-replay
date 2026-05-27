@@ -15,7 +15,7 @@
       <div class="player-box"><div id="player"></div></div>
     </div>
     <div>
-      <div class="section-label" style="margin-top:0">Matchs <span id="count"></span></div>
+      <div class="panel-h"><h3>Matchs</h3><span class="count" id="count"></span></div>
       <div id="list" class="match-list"></div>
     </div>
   </div>
@@ -31,8 +31,8 @@ let player = null, matches = [], curIdx = -1;
 fetchJSON(`data/series/${slug}.json`).then(async (d) => {
   matches = d.matches;
   document.getElementById("crumbs").innerHTML =
-    `<a href="index.html">Accueil</a> › ${d.category} · ${d.year} › <b>${seriesLabel(d.series)}</b>`;
-  document.getElementById("count").textContent = `(${matches.length})`;
+    `<a href="index.html">Accueil</a><span class="sep">›</span>${d.category} · ${d.year}<span class="sep">›</span><b>${seriesLabel(d.series)}</b>`;
+  document.getElementById("count").textContent = `${matches.length} matchs`;
   renderList();
   const start = qs("t") ? Number(qs("t")) : (matches[0] ? matches[0].t_start : 0);
   player = await loadYouTube("player", d.video_id, start);

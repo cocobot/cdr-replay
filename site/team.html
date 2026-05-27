@@ -9,9 +9,15 @@
 <body>
 <div id="hdr"></div>
 <main class="wrap">
-  <div id="crumbs" class="crumbs"></div>
-  <h1 class="hero" id="team">—</h1>
-  <p class="hero-sub" id="summary"></p>
+  <div id="crumbs" class="crumbs" style="margin-top:24px"></div>
+  <div class="team-head">
+    <div class="avatar" id="avatar">?</div>
+    <div>
+      <h1 class="title" id="team" style="font-size:34px">—</h1>
+      <p class="lead" id="summary" style="margin-top:6px"></p>
+    </div>
+  </div>
+  <div class="section-label">Matchs</div>
   <div id="list" class="match-list" style="max-height:none"></div>
 </main>
 <footer>cocobot/cdr-replay</footer>
@@ -20,11 +26,12 @@
 <script>
 document.getElementById("hdr").innerHTML = header();
 const team = qs("team");
-document.getElementById("crumbs").innerHTML = `<a href="index.html">Accueil</a> › Équipe`;
+document.getElementById("crumbs").innerHTML = `<a href="index.html">Accueil</a><span class="sep">›</span>Équipe`;
 
 fetchJSON("data/teams.json").then((teams) => {
   const apps = teams[team] || [];
   document.getElementById("team").textContent = team || "Équipe inconnue";
+  document.getElementById("avatar").textContent = ((team || "?").trim()[0] || "?").toUpperCase();
   const cats = [...new Set(apps.map((a) => a.category))];
   document.getElementById("summary").textContent =
     `${apps.length} match${apps.length > 1 ? "s" : ""} · ${cats.join(", ") || "—"}`;

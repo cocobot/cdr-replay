@@ -10,11 +10,10 @@ function fmt(s) {
 function seriesLabel(s) { return /^\d+$/.test(s) ? `Série ${s}` : s.charAt(0).toUpperCase() + s.slice(1); }
 function slugOf(cat, year, series) { return `${cat}_${year}_${String(series).replace(/[^A-Za-z0-9]/g, "")}`; }
 
-function header(active) {
-  const links = [["index.html", "Accueil"]];
-  return `<header class="top"><div class="wrap" style="display:flex;align-items:center;gap:14px;width:100%">
-    <a class="logo" href="index.html"><span class="dot"></span>CDR&nbsp;<b>Replay</b></a>
-    <nav>${links.map(([h, t]) => `<a href="${h}">${t}</a>`).join("")}</nav>
+function header() {
+  return `<header class="top"><div class="wrap">
+    <a class="logo" href="index.html"><span class="mark"></span>CDR&nbsp;<b>Replay</b></a>
+    <nav><a href="index.html">Accueil</a></nav>
   </div></header>`;
 }
 
