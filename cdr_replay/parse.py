@@ -56,17 +56,21 @@ def _sample_chunk(args):
         if not ok:
             break
         if overlay.banner_present(frame, _CFG):
-            out.append({
+            rec = {
                 "t": round(idx / fps, 2),
                 "table": overlay.read_table(frame, _CFG),
                 "yellow": overlay.read_team(frame, "yellow", _TEMPLATES, _CFG),
                 "blue": overlay.read_team(frame, "blue", _TEMPLATES, _CFG),
                 "timer": overlay.read_timer(frame, _TEMPLATES, _CFG),
-                "city_y": overlay.read_city(frame, "yellow", _CFG),
-                "country_y": overlay.read_country_raw(frame, "yellow", _CFG),
-                "city_b": overlay.read_city(frame, "blue", _CFG),
-                "country_b": overlay.read_country_raw(frame, "blue", _CFG),
-            })
+            }
+            # City/country are constant per match -> read them on 1 OCR sample in 3
+            # (Tesseract is the bottleneck; the per-match vote needs only a few).
+            if (idx // step) % 3 == 0:
+                rec["city_y"] = overlay.read_city(frame, "yellow", _CFG)
+                rec["country_y"] = overlay.read_country_raw(frame, "yellow", _CFG)
+                rec["city_b"] = overlay.read_city(frame, "blue", _CFG)
+                rec["country_b"] = overlay.read_country_raw(frame, "blue", _CFG)
+            out.append(rec)
         idx += 1
     cap.release()
     return out
