@@ -76,6 +76,33 @@ function teamLinkText(name, extra = "") {
   return `<a class="team-link-text${extra}" href="team.html?team=${encodeURIComponent(name || "")}">${esc(name || "?")}</a>`;
 }
 
+// Side ("yellow"|"blue") -> "winner" | "loser" | "" (unknown) given a match.
+// Falls back to nothing when scores aren't joined yet.
+function sideClass(m, side) {
+  if (m.winner === side) return "winner";
+  if (m.winner && m.winner !== side) return "loser";
+  if (m.score_yellow != null && m.score_blue != null) {
+    const a = m.score_yellow, b = m.score_blue;
+    if (a === b) return "";
+    const win = a > b ? "yellow" : "blue";
+    return side === win ? "winner" : "loser";
+  }
+  return "";
+}
+
+// Score cell HTML: "98–35" with winner side bolded, or "Table X" when no scores.
+function scoreCell(m) {
+  const sy = m.score_yellow, sb = m.score_blue;
+  if (sy == null || sb == null) {
+    return m.table ? `Table ${esc(m.table)}` : "";
+  }
+  const wy = sideClass(m, "yellow") === "winner";
+  const wb = sideClass(m, "blue") === "winner";
+  const fy = wy ? `<span class="w">${sy}</span>` : `${sy}`;
+  const fb = wb ? `<span class="w">${sb}</span>` : `${sb}`;
+  return `${fy}<span class="match-row__score__sep">–</span>${fb}`;
+}
+
 // ---------- Standings (per cat/year, from the Google Sheet extraction) ----------
 const _standingsCache = {};
 async function loadStandings(cat, year) {

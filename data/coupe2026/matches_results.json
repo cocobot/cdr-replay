@@ -1,0 +1,2567 @@
+{
+  "year": 2026,
+  "category": "senior",
+  "matches": [
+    {
+      "series": "1",
+      "n": 1,
+      "team_blue": "Eceborg",
+      "team_yellow": "ESEO – ANGERS",
+      "score_blue": 35,
+      "score_yellow": 98,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 2,
+      "team_blue": "ENSIM’ELEC",
+      "team_yellow": "Mécapi",
+      "score_blue": 21,
+      "score_yellow": 36,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 3,
+      "team_blue": "ENAC Robotique",
+      "team_yellow": "ARFIT",
+      "score_blue": 40,
+      "score_yellow": 20,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 4,
+      "team_blue": "7Robot",
+      "team_yellow": "PM-ROBOTIX",
+      "score_blue": 124,
+      "score_yellow": 44,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 5,
+      "team_blue": "Clubelek",
+      "team_yellow": "ARFIT",
+      "score_blue": 18,
+      "score_yellow": 56,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 6,
+      "team_blue": "Robotronik Phelma",
+      "team_yellow": "UniMakers",
+      "score_blue": 131,
+      "score_yellow": 25,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 7,
+      "team_blue": "AREM",
+      "team_yellow": "TACT-INDÉ",
+      "score_blue": 22,
+      "score_yellow": 16,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 8,
+      "team_blue": "Les Karibous",
+      "team_yellow": "CRIS",
+      "score_blue": 45,
+      "score_yellow": 0,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 9,
+      "team_blue": "ECNoname",
+      "team_yellow": "COGIP",
+      "score_blue": 14,
+      "score_yellow": 32,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 10,
+      "team_blue": "MTISTY",
+      "team_yellow": "Goldorak",
+      "score_blue": 10,
+      "score_yellow": 90,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 12,
+      "team_blue": "Evolutek",
+      "team_yellow": "Metal Pipe",
+      "score_blue": 30,
+      "score_yellow": 33,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 13,
+      "team_blue": "CDROMS",
+      "team_yellow": "Ze Crazy Team",
+      "score_blue": 47,
+      "score_yellow": 94,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 14,
+      "team_blue": "Pêle-Mêle",
+      "team_yellow": "Coffee Machine",
+      "score_blue": 96,
+      "score_yellow": 76,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 15,
+      "team_blue": "ARC",
+      "team_yellow": "Esig’tronix",
+      "score_blue": 43,
+      "score_yellow": 27,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 16,
+      "team_blue": "HARPers",
+      "team_yellow": "Ares ENSEA",
+      "score_blue": 12,
+      "score_yellow": 44,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 17,
+      "team_blue": "Super Tux Kart",
+      "team_yellow": "FIPATECH",
+      "score_blue": 58,
+      "score_yellow": 53,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 18,
+      "team_blue": "CRIÉ",
+      "team_yellow": "Sudriabotik",
+      "score_blue": 20,
+      "score_yellow": 27,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 19,
+      "team_blue": "missibot",
+      "team_yellow": "EsialRobotik",
+      "score_blue": 21,
+      "score_yellow": 98,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 20,
+      "team_blue": "CRAC1",
+      "team_yellow": "Les Karibelles",
+      "score_blue": 34,
+      "score_yellow": 47,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 21,
+      "team_blue": "TDS-Team 72 Familly",
+      "team_yellow": "Mars Attacks!",
+      "score_blue": 43,
+      "score_yellow": 55,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 22,
+      "team_blue": "Zest Machine",
+      "team_yellow": "UTCoupe",
+      "score_blue": 84,
+      "score_yellow": 27,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 23,
+      "team_blue": "Team Opossums",
+      "team_yellow": "PinMode",
+      "score_blue": 52,
+      "score_yellow": 22,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 24,
+      "team_blue": "TeamDiff",
+      "team_yellow": "NNRT",
+      "score_blue": 100,
+      "score_yellow": 19,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 25,
+      "team_blue": "IUT_Nice",
+      "team_yellow": "TDS-Team 72",
+      "score_blue": 16,
+      "score_yellow": 73,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 26,
+      "team_blue": "DDoS",
+      "team_yellow": "Club Tech CentraleSupélec",
+      "score_blue": 64,
+      "score_yellow": 57,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 27,
+      "team_blue": "Coc’otter",
+      "team_yellow": "Krabi",
+      "score_blue": 48,
+      "score_yellow": 51,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 28,
+      "team_blue": "Les brasseurs d’idées",
+      "team_yellow": "R3EA",
+      "score_blue": 9,
+      "score_yellow": 84,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 29,
+      "team_blue": "Champ’Icam",
+      "team_yellow": "Toast’eirb",
+      "score_blue": 19,
+      "score_yellow": 11,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 30,
+      "team_blue": "MiAM Robotique",
+      "team_yellow": "Kameleon",
+      "score_blue": 122,
+      "score_yellow": 45,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 31,
+      "team_blue": "Supaero Robotik Club",
+      "team_yellow": "Roboticam Vendee",
+      "score_blue": 26,
+      "score_yellow": 11,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 32,
+      "team_blue": "Azbot",
+      "team_yellow": "Crusader",
+      "score_blue": 76,
+      "score_yellow": 0,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 35,
+      "team_blue": "ECNantrobot",
+      "team_yellow": "RCVA",
+      "score_blue": 26,
+      "score_yellow": 54,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 36,
+      "team_blue": "Les Chopaings",
+      "team_yellow": "CRAC2",
+      "score_blue": null,
+      "score_yellow": 51,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 37,
+      "team_blue": "INSA Rennes",
+      "team_yellow": "(Robot en bois)",
+      "score_blue": 28,
+      "score_yellow": 56,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "1",
+      "n": 38,
+      "team_blue": "Asso R2T2",
+      "team_yellow": "Lab Sciren Robotics",
+      "score_blue": 5,
+      "score_yellow": 33,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 39,
+      "team_blue": "Goldorak",
+      "team_yellow": "Ze Crazy Team",
+      "score_blue": 59,
+      "score_yellow": 97,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 41,
+      "team_blue": "Robotronik Phelma",
+      "team_yellow": "Ovoleur",
+      "score_blue": 93,
+      "score_yellow": 22,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 42,
+      "team_blue": "Kameleon",
+      "team_yellow": "Riombotique encadrants",
+      "score_blue": 24,
+      "score_yellow": 47,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 43,
+      "team_blue": "INSA Rennes",
+      "team_yellow": "Azbot",
+      "score_blue": 39,
+      "score_yellow": 85,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 44,
+      "team_blue": "MTISTY",
+      "team_yellow": "TACT-INDÉ",
+      "score_blue": 29,
+      "score_yellow": 22,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 45,
+      "team_blue": "ECNoname",
+      "team_yellow": "Clubelek",
+      "score_blue": 0,
+      "score_yellow": 0,
+      "winner": null,
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 46,
+      "team_blue": "PinMode",
+      "team_yellow": "Supaero Robotik Club",
+      "score_blue": 31,
+      "score_yellow": 16,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 47,
+      "team_blue": "Mécapi",
+      "team_yellow": "INTech",
+      "score_blue": 45,
+      "score_yellow": 28,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 48,
+      "team_blue": "HARPers",
+      "team_yellow": "Roboticam Vendee",
+      "score_blue": 10,
+      "score_yellow": 28,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 51,
+      "team_blue": "ENSIM’ELEC",
+      "team_yellow": "FIPATECH",
+      "score_blue": 41,
+      "score_yellow": 69,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 52,
+      "team_blue": "7Robot",
+      "team_yellow": "TDS-Team 72",
+      "score_blue": 51,
+      "score_yellow": 110,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 53,
+      "team_blue": "CDROMS",
+      "team_yellow": "CRAC2",
+      "score_blue": 57,
+      "score_yellow": 36,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 54,
+      "team_blue": "AREM",
+      "team_yellow": "IUT_Nice",
+      "score_blue": 0,
+      "score_yellow": 16,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 55,
+      "team_blue": "EsialRobotik",
+      "team_yellow": "Les Karibous",
+      "score_blue": 52,
+      "score_yellow": 47,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 56,
+      "team_blue": "CRIÉ",
+      "team_yellow": "Ares ENSEA",
+      "score_blue": 41,
+      "score_yellow": 85,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 57,
+      "team_blue": "NNRT",
+      "team_yellow": "Metal Pipe",
+      "score_blue": 60,
+      "score_yellow": 33,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 58,
+      "team_blue": "TDS-Team 72 Familly",
+      "team_yellow": "ENAC Robotique",
+      "score_blue": 66,
+      "score_yellow": 57,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 59,
+      "team_blue": "PM-ROBOTIX",
+      "team_yellow": "ECNantrobot",
+      "score_blue": 61,
+      "score_yellow": 36,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 60,
+      "team_blue": "Pêle-Mêle",
+      "team_yellow": "R3EA",
+      "score_blue": 93,
+      "score_yellow": 63,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 61,
+      "team_blue": "Coc’otter",
+      "team_yellow": "Lab Sciren Robotics",
+      "score_blue": 35,
+      "score_yellow": 24,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 62,
+      "team_blue": "UTCoupe",
+      "team_yellow": "missibot",
+      "score_blue": 83,
+      "score_yellow": 32,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 63,
+      "team_blue": "Eirbot",
+      "team_yellow": "CRLG",
+      "score_blue": 41,
+      "score_yellow": 49,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 64,
+      "team_blue": "LYCEE DE L’ARC SI ARC-BOT",
+      "team_yellow": "Coffee Machine",
+      "score_blue": 17,
+      "score_yellow": 65,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 65,
+      "team_blue": "Les Chopaings",
+      "team_yellow": "Club Tech CentraleSupélec",
+      "score_blue": 0,
+      "score_yellow": 106,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 66,
+      "team_blue": "Roboticam Vendee 2",
+      "team_yellow": "ARC",
+      "score_blue": 41,
+      "score_yellow": 61,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 67,
+      "team_blue": "CRLGirls",
+      "team_yellow": "CRAC1",
+      "score_blue": 25,
+      "score_yellow": 55,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 68,
+      "team_blue": "ARFIT",
+      "team_yellow": "Sudriabotik",
+      "score_blue": 12,
+      "score_yellow": 20,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 69,
+      "team_blue": "Eceborg",
+      "team_yellow": "MiAM Robotique",
+      "score_blue": 43,
+      "score_yellow": 113,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 70,
+      "team_blue": "Hololutek",
+      "team_yellow": "Esig’tronix",
+      "score_blue": 22,
+      "score_yellow": 9,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 71,
+      "team_blue": "Modelec ISEN",
+      "team_yellow": "Mars Attacks!",
+      "score_blue": 64,
+      "score_yellow": 102,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 72,
+      "team_blue": "(ENSIL-ENSCI) Ironnut",
+      "team_yellow": "Tek’TN",
+      "score_blue": 26,
+      "score_yellow": 24,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 73,
+      "team_blue": "Evolutek",
+      "team_yellow": "COGIP",
+      "score_blue": 12,
+      "score_yellow": 108,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 74,
+      "team_blue": "Krabi",
+      "team_yellow": "Champ’Icam",
+      "score_blue": 48,
+      "score_yellow": 0,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 75,
+      "team_blue": "Zest Machine",
+      "team_yellow": "ESEO – ANGERS",
+      "score_blue": 64,
+      "score_yellow": 132,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 76,
+      "team_blue": "Team Opossums",
+      "team_yellow": "Les Karibelles",
+      "score_blue": 73,
+      "score_yellow": 36,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 77,
+      "team_blue": "TeamDiff",
+      "team_yellow": "DDoS",
+      "score_blue": 113,
+      "score_yellow": 66,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 78,
+      "team_blue": "RCVA",
+      "team_yellow": "Super Tux Kart",
+      "score_blue": 131,
+      "score_yellow": 31,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 79,
+      "team_blue": "Les brasseurs d’idées",
+      "team_yellow": "Girafes",
+      "score_blue": 36,
+      "score_yellow": 99,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 80,
+      "team_blue": "Toast’eirb",
+      "team_yellow": "kraft bot",
+      "score_blue": 0,
+      "score_yellow": 0,
+      "winner": null,
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 81,
+      "team_blue": "As de Pic",
+      "team_yellow": "SUSSUS INVADERS",
+      "score_blue": 25,
+      "score_yellow": 37,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 82,
+      "team_blue": "Team Chat Robotique",
+      "team_yellow": "EMA’Bot",
+      "score_blue": 30,
+      "score_yellow": 20,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 83,
+      "team_blue": "UniMakers",
+      "team_yellow": "Crusader",
+      "score_blue": 34,
+      "score_yellow": 31,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "2",
+      "n": 84,
+      "team_blue": "Pokibot",
+      "team_yellow": "Asso R2T2",
+      "score_blue": 45,
+      "score_yellow": 40,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 85,
+      "team_blue": "Sudriabotik",
+      "team_yellow": "ECNoname",
+      "score_blue": 117,
+      "score_yellow": 20,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 86,
+      "team_blue": "NNRT",
+      "team_yellow": "Zest Machine",
+      "score_blue": 45,
+      "score_yellow": 57,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 87,
+      "team_blue": "CDROMS",
+      "team_yellow": "PM-ROBOTIX",
+      "score_blue": 71,
+      "score_yellow": 54,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 88,
+      "team_blue": "Esig’tronix",
+      "team_yellow": "missibot",
+      "score_blue": 39,
+      "score_yellow": 46,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 91,
+      "team_blue": "Girafes",
+      "team_yellow": "Roboticam Vendee 2",
+      "score_blue": 100,
+      "score_yellow": 15,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 92,
+      "team_blue": "Clubelek",
+      "team_yellow": "DaVinciBot",
+      "score_blue": 0,
+      "score_yellow": 0,
+      "winner": null,
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 93,
+      "team_blue": "Pokibot",
+      "team_yellow": "CRENIM",
+      "score_blue": 43,
+      "score_yellow": 20,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 94,
+      "team_blue": "Super Tux Kart",
+      "team_yellow": "(ENSIL-ENSCI) Les Casse Noibots",
+      "score_blue": 47,
+      "score_yellow": 47,
+      "winner": null,
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 95,
+      "team_blue": "Lab Sciren Robotics",
+      "team_yellow": "R3EA",
+      "score_blue": 38,
+      "score_yellow": 108,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 96,
+      "team_blue": "Team Chat Robotique",
+      "team_yellow": "IUT_Nice",
+      "score_blue": 34,
+      "score_yellow": 0,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 97,
+      "team_blue": "Kameleon",
+      "team_yellow": "Hololutek",
+      "score_blue": 69,
+      "score_yellow": 85,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 98,
+      "team_blue": "7Robot",
+      "team_yellow": "RCVA",
+      "score_blue": 68,
+      "score_yellow": 130,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 99,
+      "team_blue": "TDS-Team 72",
+      "team_yellow": "Riombotique encadrants",
+      "score_blue": 104,
+      "score_yellow": 67,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 100,
+      "team_blue": "Robotronik Phelma",
+      "team_yellow": "Supaero Robotik Club",
+      "score_blue": 134,
+      "score_yellow": 36,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 101,
+      "team_blue": "ECNantrobot",
+      "team_yellow": "AREM",
+      "score_blue": 27,
+      "score_yellow": 0,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 102,
+      "team_blue": "DDoS",
+      "team_yellow": "PinMode",
+      "score_blue": 93,
+      "score_yellow": 39,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 103,
+      "team_blue": "UniMakers",
+      "team_yellow": "E³reuil",
+      "score_blue": 48,
+      "score_yellow": 23,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 104,
+      "team_blue": "INTech",
+      "team_yellow": "EsialRobotik",
+      "score_blue": 14,
+      "score_yellow": 44,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 105,
+      "team_blue": "Champ’Icam",
+      "team_yellow": "(ENSIL-ENSCI) Ironnut",
+      "score_blue": 21,
+      "score_yellow": 42,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 106,
+      "team_blue": "TDS-Team 72 Familly",
+      "team_yellow": "Ovoleur",
+      "score_blue": 77,
+      "score_yellow": 45,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 107,
+      "team_blue": "As de Pic",
+      "team_yellow": "Tek’TN",
+      "score_blue": 28,
+      "score_yellow": 0,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 108,
+      "team_blue": "ESEO – ANGERS",
+      "team_yellow": "Les Karibelles",
+      "score_blue": 202,
+      "score_yellow": 62,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 109,
+      "team_blue": "kraft bot",
+      "team_yellow": "Asso R2T2",
+      "score_blue": 17,
+      "score_yellow": 0,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 110,
+      "team_blue": "TheRobIA",
+      "team_yellow": "Evolutek",
+      "score_blue": 41,
+      "score_yellow": 29,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 111,
+      "team_blue": "Chouquette Team",
+      "team_yellow": "MTISTY",
+      "score_blue": 30,
+      "score_yellow": 32,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 112,
+      "team_blue": "CRLGirls",
+      "team_yellow": "ARFIT",
+      "score_blue": 22,
+      "score_yellow": 58,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 113,
+      "team_blue": "MiAM Robotique",
+      "team_yellow": "Ze Crazy Team",
+      "score_blue": 100,
+      "score_yellow": 66,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 114,
+      "team_blue": "ENSIM’ELEC",
+      "team_yellow": "Valrobotik",
+      "score_blue": 30,
+      "score_yellow": 0,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 115,
+      "team_blue": "Eirbot",
+      "team_yellow": "HARPers",
+      "score_blue": 18,
+      "score_yellow": 18,
+      "winner": null,
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 116,
+      "team_blue": "INSA Rennes",
+      "team_yellow": "CRIÉ",
+      "score_blue": 26,
+      "score_yellow": 26,
+      "winner": null,
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 117,
+      "team_blue": "Toast’eirb",
+      "team_yellow": "Les brasseurs d’idées",
+      "score_blue": 33,
+      "score_yellow": 48,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 119,
+      "team_blue": "ARC",
+      "team_yellow": "COGIP",
+      "score_blue": 67,
+      "score_yellow": 84,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 120,
+      "team_blue": "LYCEE DE L’ARC SI ARC-BOT",
+      "team_yellow": "APEROBOT",
+      "score_blue": 5,
+      "score_yellow": 33,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 121,
+      "team_blue": "Ares ENSEA",
+      "team_yellow": "CRAC2",
+      "score_blue": 94,
+      "score_yellow": 0,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 122,
+      "team_blue": "FIPATECH",
+      "team_yellow": "Les Chopaings",
+      "score_blue": 46,
+      "score_yellow": 31,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 123,
+      "team_blue": "Coc’otter",
+      "team_yellow": "FenRIR",
+      "score_blue": 68,
+      "score_yellow": 41,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 124,
+      "team_blue": "ENAC Robotique",
+      "team_yellow": "TACT-INDÉ",
+      "score_blue": 61,
+      "score_yellow": 3,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 125,
+      "team_blue": "Mécapi",
+      "team_yellow": "Eceborg",
+      "score_blue": 25,
+      "score_yellow": 0,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 126,
+      "team_blue": "Team Opossums",
+      "team_yellow": "Azbot",
+      "score_blue": 94,
+      "score_yellow": 76,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 127,
+      "team_blue": "Goldorak",
+      "team_yellow": "Coffee Machine",
+      "score_blue": 101,
+      "score_yellow": 45,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 128,
+      "team_blue": "Modelec ISEN",
+      "team_yellow": "UTCoupe",
+      "score_blue": 19,
+      "score_yellow": 65,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 129,
+      "team_blue": "Mars Attacks!",
+      "team_yellow": "Club Tech CentraleSupélec",
+      "score_blue": 113,
+      "score_yellow": 69,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 130,
+      "team_blue": "Pêle-Mêle",
+      "team_yellow": "TeamDiff",
+      "score_blue": 96,
+      "score_yellow": 131,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 131,
+      "team_blue": "CRLG",
+      "team_yellow": "Metal Pipe",
+      "score_blue": 48,
+      "score_yellow": 50,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 132,
+      "team_blue": "Polybot Grenoble",
+      "team_yellow": "CRIG2",
+      "score_blue": 28,
+      "score_yellow": 18,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 134,
+      "team_blue": "Les Karibous",
+      "team_yellow": "SUSSUS INVADERS",
+      "score_blue": 87,
+      "score_yellow": 66,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 135,
+      "team_blue": "EMA’Bot",
+      "team_yellow": "Krabi",
+      "score_blue": 11,
+      "score_yellow": 84,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "3",
+      "n": 136,
+      "team_blue": "CRAC1",
+      "team_yellow": "Roboticam Vendee",
+      "score_blue": 77,
+      "score_yellow": 46,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 137,
+      "team_blue": "Chouquette Team",
+      "team_yellow": "Tek’TN",
+      "score_blue": 0,
+      "score_yellow": 20,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 138,
+      "team_blue": "PinMode",
+      "team_yellow": "Mécapi",
+      "score_blue": 56,
+      "score_yellow": 64,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 139,
+      "team_blue": "ENSIM’ELEC",
+      "team_yellow": "missibot",
+      "score_blue": 49,
+      "score_yellow": 0,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 140,
+      "team_blue": "Hololutek",
+      "team_yellow": "CRLGirls",
+      "score_blue": 108,
+      "score_yellow": 15,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 141,
+      "team_blue": "Modelec ISEN",
+      "team_yellow": "MTISTY",
+      "score_blue": 39,
+      "score_yellow": 51,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 142,
+      "team_blue": "Ovoleur",
+      "team_yellow": "Pokibot",
+      "score_blue": 39,
+      "score_yellow": 50,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 143,
+      "team_blue": "ESEO – ANGERS",
+      "team_yellow": "Kameleon",
+      "score_blue": 169,
+      "score_yellow": 30,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 144,
+      "team_blue": "Clubelek",
+      "team_yellow": "Goldorak",
+      "score_blue": 19,
+      "score_yellow": 79,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 145,
+      "team_blue": "ÉcuRIR",
+      "team_yellow": "Les Ingénuts",
+      "score_blue": 20,
+      "score_yellow": 15,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 146,
+      "team_blue": "CRIG2",
+      "team_yellow": "Coffee Machine",
+      "score_blue": 25,
+      "score_yellow": 98,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 147,
+      "team_blue": "Coc’otter",
+      "team_yellow": "ARC",
+      "score_blue": 109,
+      "score_yellow": 34,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 148,
+      "team_blue": "Valrobotik",
+      "team_yellow": "E³reuil",
+      "score_blue": 37,
+      "score_yellow": 0,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 149,
+      "team_blue": "Robotronik Phelma",
+      "team_yellow": "PM-ROBOTIX",
+      "score_blue": 109,
+      "score_yellow": 50,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 150,
+      "team_blue": "Club Tech CentraleSupélec",
+      "team_yellow": "COGIP",
+      "score_blue": 105,
+      "score_yellow": 113,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 151,
+      "team_blue": "CRENIM",
+      "team_yellow": "Team Chat Robotique",
+      "score_blue": 0,
+      "score_yellow": 28,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 152,
+      "team_blue": "DDoS",
+      "team_yellow": "Toast’eirb",
+      "score_blue": 67,
+      "score_yellow": 24,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 153,
+      "team_blue": "ENAC Robotique",
+      "team_yellow": "Esig’tronix",
+      "score_blue": 48,
+      "score_yellow": 43,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 155,
+      "team_blue": "EMA’Bot",
+      "team_yellow": "UniMakers",
+      "score_blue": 56,
+      "score_yellow": 54,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 156,
+      "team_blue": "Les Karibelles",
+      "team_yellow": "Evolutek",
+      "score_blue": 48,
+      "score_yellow": 25,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 157,
+      "team_blue": "Polybot Grenoble",
+      "team_yellow": "Galiléo (Eurobot (Coupe de Robotique) 2026)",
+      "score_blue": 13,
+      "score_yellow": 16,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 158,
+      "team_blue": "FIPATECH",
+      "team_yellow": "R3EA",
+      "score_blue": 57,
+      "score_yellow": 94,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 159,
+      "team_blue": "Eceborg",
+      "team_yellow": "FenRIR",
+      "score_blue": 73,
+      "score_yellow": 71,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 160,
+      "team_blue": "IronBot",
+      "team_yellow": "(ENSIL-ENSCI) Ironnut",
+      "score_blue": 42,
+      "score_yellow": 50,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 161,
+      "team_blue": "7Robot",
+      "team_yellow": "NNRT",
+      "score_blue": 91,
+      "score_yellow": 12,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 162,
+      "team_blue": "TDS-Team 72 Familly",
+      "team_yellow": "Zest Machine",
+      "score_blue": 90,
+      "score_yellow": 104,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 163,
+      "team_blue": "Pêle-Mêle",
+      "team_yellow": "TDS-Team 72",
+      "score_blue": 155,
+      "score_yellow": 113,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 164,
+      "team_blue": "ECNoname",
+      "team_yellow": "Supaero Robotik Club",
+      "score_blue": 52,
+      "score_yellow": 39,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 165,
+      "team_blue": "CDROMS",
+      "team_yellow": "Krabi",
+      "score_blue": 70,
+      "score_yellow": 64,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 166,
+      "team_blue": "Riombotique encadrants",
+      "team_yellow": "Sudriabotik",
+      "score_blue": 60,
+      "score_yellow": 148,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 167,
+      "team_blue": "SUSSUS INVADERS",
+      "team_yellow": "TACT-INDÉ",
+      "score_blue": 66,
+      "score_yellow": 31,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 168,
+      "team_blue": "ECNantrobot",
+      "team_yellow": "Ares ENSEA",
+      "score_blue": 15,
+      "score_yellow": 72,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 169,
+      "team_blue": "IUT_Nice",
+      "team_yellow": "Les Chopaings",
+      "score_blue": 30,
+      "score_yellow": 99,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 170,
+      "team_blue": "EsialRobotik",
+      "team_yellow": "Les brasseurs d’idées",
+      "score_blue": 58,
+      "score_yellow": 50,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 171,
+      "team_blue": "RobotikUTT",
+      "team_yellow": "Efrobot",
+      "score_blue": 31,
+      "score_yellow": 11,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 172,
+      "team_blue": "TheRobIA",
+      "team_yellow": "RCVA",
+      "score_blue": 25,
+      "score_yellow": 130,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 173,
+      "team_blue": "INTech",
+      "team_yellow": "Eirbot",
+      "score_blue": 33,
+      "score_yellow": 31,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 174,
+      "team_blue": "Lab Sciren Robotics",
+      "team_yellow": "Roboticam Vendee",
+      "score_blue": 39,
+      "score_yellow": 29,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 175,
+      "team_blue": "As de Pic",
+      "team_yellow": "Metal Pipe",
+      "score_blue": 34,
+      "score_yellow": 59,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 176,
+      "team_blue": "kraft bot",
+      "team_yellow": "CRLG",
+      "score_blue": 0,
+      "score_yellow": 48,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 177,
+      "team_blue": "MiAM Robotique",
+      "team_yellow": "Les Karibous",
+      "score_blue": 146,
+      "score_yellow": 78,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 178,
+      "team_blue": "Team Opossums",
+      "team_yellow": "TeamDiff",
+      "score_blue": 74,
+      "score_yellow": 118,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 179,
+      "team_blue": "Azbot",
+      "team_yellow": "HARPers",
+      "score_blue": 95,
+      "score_yellow": 36,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 180,
+      "team_blue": "Girafes",
+      "team_yellow": "APEROBOT",
+      "score_blue": 130,
+      "score_yellow": 24,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 181,
+      "team_blue": "Asso R2T2",
+      "team_yellow": "(ENSIL-ENSCI) Les Casse Noibots",
+      "score_blue": 39,
+      "score_yellow": 36,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 182,
+      "team_blue": "LYCEE DE L’ARC SI ARC-BOT",
+      "team_yellow": "DaVinciBot",
+      "score_blue": 35,
+      "score_yellow": 25,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 183,
+      "team_blue": "Champ’Icam",
+      "team_yellow": "INSA Rennes",
+      "score_blue": 43,
+      "score_yellow": 67,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 184,
+      "team_blue": "Mars Attacks!",
+      "team_yellow": "Ze Crazy Team",
+      "score_blue": 106,
+      "score_yellow": 79,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 185,
+      "team_blue": "AREM",
+      "team_yellow": "CRAC2",
+      "score_blue": 27,
+      "score_yellow": 39,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 186,
+      "team_blue": "CRIÉ",
+      "team_yellow": "Super Tux Kart",
+      "score_blue": 46,
+      "score_yellow": 46,
+      "winner": null,
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 187,
+      "team_blue": "Roboticam Vendee 2",
+      "team_yellow": "ARFIT",
+      "score_blue": 50,
+      "score_yellow": 61,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 188,
+      "team_blue": "e-gab",
+      "team_yellow": "Pingouin Centrale Bot",
+      "score_blue": 21,
+      "score_yellow": 8,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 189,
+      "team_blue": "CRAC1",
+      "team_yellow": "CRIS",
+      "score_blue": 57,
+      "score_yellow": 13,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "4",
+      "n": 190,
+      "team_blue": "UTCoupe",
+      "team_yellow": "BipBoup 3iL",
+      "score_blue": 104,
+      "score_yellow": 20,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 191,
+      "team_blue": "Les Chopaings",
+      "team_yellow": "Super Tux Kart",
+      "score_blue": 81,
+      "score_yellow": 74,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 192,
+      "team_blue": "Les Ingénuts",
+      "team_yellow": "As de Pic",
+      "score_blue": 29,
+      "score_yellow": 54,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 193,
+      "team_blue": "Eirbot",
+      "team_yellow": "APEROBOT",
+      "score_blue": 30,
+      "score_yellow": 24,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 194,
+      "team_blue": "ESIEA – CHELL",
+      "team_yellow": "CRENIM",
+      "score_blue": 8,
+      "score_yellow": 28,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 195,
+      "team_blue": "missibot",
+      "team_yellow": "LYCEE DE L’ARC SI ARC-BOT",
+      "score_blue": 0,
+      "score_yellow": 8,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 196,
+      "team_blue": "UniMakers",
+      "team_yellow": "Sudriabotik",
+      "score_blue": 43,
+      "score_yellow": 125,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 197,
+      "team_blue": "Coffee Machine",
+      "team_yellow": "Les brasseurs d’idées",
+      "score_blue": 89,
+      "score_yellow": 61,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 198,
+      "team_blue": "IUT_Nice",
+      "team_yellow": "Toast’eirb",
+      "score_blue": 29,
+      "score_yellow": 55,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 200,
+      "team_blue": "RobotikUTT",
+      "team_yellow": "MTISTY",
+      "score_blue": 63,
+      "score_yellow": 63,
+      "winner": null,
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 201,
+      "team_blue": "Club Tech CentraleSupélec",
+      "team_yellow": "Ares ENSEA",
+      "score_blue": 145,
+      "score_yellow": 81,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 202,
+      "team_blue": "Mars Attacks!",
+      "team_yellow": "Les Karibous",
+      "score_blue": 179,
+      "score_yellow": 103,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 204,
+      "team_blue": "Clubelek",
+      "team_yellow": "E³reuil",
+      "score_blue": 10,
+      "score_yellow": 5,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 205,
+      "team_blue": "Polybot Grenoble",
+      "team_yellow": "IronBot",
+      "score_blue": 60,
+      "score_yellow": 42,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 206,
+      "team_blue": "COGIP",
+      "team_yellow": "DaVinciBot",
+      "score_blue": 0,
+      "score_yellow": 10,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 207,
+      "team_blue": "TACT-INDÉ",
+      "team_yellow": "Tek’TN",
+      "score_blue": 53,
+      "score_yellow": 29,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 208,
+      "team_blue": "TDS-Team 72",
+      "team_yellow": "Team Opossums",
+      "score_blue": 123,
+      "score_yellow": 102,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 209,
+      "team_blue": "Hololutek",
+      "team_yellow": "Asso R2T2",
+      "score_blue": 131,
+      "score_yellow": 42,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 210,
+      "team_blue": "Champ’Icam",
+      "team_yellow": "FIPATECH",
+      "score_blue": 73,
+      "score_yellow": 89,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 211,
+      "team_blue": "UTCoupe",
+      "team_yellow": "Goldorak",
+      "score_blue": 70,
+      "score_yellow": 91,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 212,
+      "team_blue": "SUSSUS INVADERS",
+      "team_yellow": "CRAC1",
+      "score_blue": 72,
+      "score_yellow": 81,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 213,
+      "team_blue": "AREM",
+      "team_yellow": "kraft bot",
+      "score_blue": 67,
+      "score_yellow": 41,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 214,
+      "team_blue": "Efrobot",
+      "team_yellow": "CRIS",
+      "score_blue": 0,
+      "score_yellow": 0,
+      "winner": null,
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 215,
+      "team_blue": "ECNantrobot",
+      "team_yellow": "Riombotique encadrants",
+      "score_blue": 26,
+      "score_yellow": 41,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 216,
+      "team_blue": "RCVA",
+      "team_yellow": "Roboticam Vendee 2",
+      "score_blue": 154,
+      "score_yellow": 20,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 219,
+      "team_blue": "BipBoup 3iL",
+      "team_yellow": "Kameleon",
+      "score_blue": 29,
+      "score_yellow": 74,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 220,
+      "team_blue": "Ovoleur",
+      "team_yellow": "Girafes",
+      "score_blue": 35,
+      "score_yellow": 141,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 221,
+      "team_blue": "CRLG",
+      "team_yellow": "Eceborg",
+      "score_blue": 31,
+      "score_yellow": 39,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 222,
+      "team_blue": "ARFIT",
+      "team_yellow": "Lab Sciren Robotics",
+      "score_blue": 66,
+      "score_yellow": 52,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 223,
+      "team_blue": "ENSIM’ELEC",
+      "team_yellow": "TheRobIA",
+      "score_blue": 39,
+      "score_yellow": 9,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 224,
+      "team_blue": "TeamDiff",
+      "team_yellow": "Krabi",
+      "score_blue": 139,
+      "score_yellow": 112,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 225,
+      "team_blue": "Chouquette Team",
+      "team_yellow": "CRIÉ",
+      "score_blue": 11,
+      "score_yellow": 25,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 226,
+      "team_blue": "DDoS",
+      "team_yellow": "CDROMS",
+      "score_blue": 124,
+      "score_yellow": 61,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 227,
+      "team_blue": "INSA Rennes",
+      "team_yellow": "Mécapi",
+      "score_blue": 71,
+      "score_yellow": 79,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 228,
+      "team_blue": "Crusader",
+      "team_yellow": "e-gab",
+      "score_blue": 34,
+      "score_yellow": 6,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 229,
+      "team_blue": "CRLGirls",
+      "team_yellow": "Azbot",
+      "score_blue": 39,
+      "score_yellow": 89,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 230,
+      "team_blue": "Galiléo (Eurobot (Coupe de Robotique) 2026)",
+      "team_yellow": "NNRT",
+      "score_blue": 14,
+      "score_yellow": 34,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 231,
+      "team_blue": "EsialRobotik",
+      "team_yellow": "(ENSIL-ENSCI) Les Casse Noibots",
+      "score_blue": 110,
+      "score_yellow": 19,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 232,
+      "team_blue": "ESEO – ANGERS",
+      "team_yellow": "ARC",
+      "score_blue": 156,
+      "score_yellow": 32,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 233,
+      "team_blue": "Zest Machine",
+      "team_yellow": "PinMode",
+      "score_blue": 75,
+      "score_yellow": 33,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 234,
+      "team_blue": "Roboticam Vendee",
+      "team_yellow": "CRAC2",
+      "score_blue": 21,
+      "score_yellow": 0,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 235,
+      "team_blue": "Valrobotik",
+      "team_yellow": "Supaero Robotik Club",
+      "score_blue": 55,
+      "score_yellow": 60,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 237,
+      "team_blue": "Metal Pipe",
+      "team_yellow": "Modelec ISEN",
+      "score_blue": 32,
+      "score_yellow": 43,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 238,
+      "team_blue": "EMA’Bot",
+      "team_yellow": "Evolutek",
+      "score_blue": 18,
+      "score_yellow": 68,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 239,
+      "team_blue": "R3EA",
+      "team_yellow": "Robotronik Phelma",
+      "score_blue": 58,
+      "score_yellow": 112,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 241,
+      "team_blue": "Pingouin Centrale Bot",
+      "team_yellow": "PM-ROBOTIX",
+      "score_blue": 49,
+      "score_yellow": 59,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 242,
+      "team_blue": "Pêle-Mêle",
+      "team_yellow": "ECNoname",
+      "score_blue": 80,
+      "score_yellow": 42,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 244,
+      "team_blue": "Ker(DVB)",
+      "team_yellow": "Team Chat Robotique",
+      "score_blue": 0,
+      "score_yellow": 30,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 245,
+      "team_blue": "INTech",
+      "team_yellow": "Esig’tronix",
+      "score_blue": 53,
+      "score_yellow": 54,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 246,
+      "team_blue": "(ENSIL-ENSCI) Ironnut",
+      "team_yellow": "FenRIR",
+      "score_blue": 79,
+      "score_yellow": 59,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 248,
+      "team_blue": "HARPers",
+      "team_yellow": "Pokibot",
+      "score_blue": 23,
+      "score_yellow": 41,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 249,
+      "team_blue": "7Robot",
+      "team_yellow": "MiAM Robotique",
+      "score_blue": 85,
+      "score_yellow": 119,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 250,
+      "team_blue": "Les Karibelles",
+      "team_yellow": "Ze Crazy Team",
+      "score_blue": 40,
+      "score_yellow": 43,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 251,
+      "team_blue": "Coc’otter",
+      "team_yellow": "TDS-Team 72 Familly",
+      "score_blue": 115,
+      "score_yellow": 101,
+      "winner": "blue",
+      "colors_known": true
+    },
+    {
+      "series": "5",
+      "n": 252,
+      "team_blue": "CRIG2",
+      "team_yellow": "ENAC Robotique",
+      "score_blue": 24,
+      "score_yellow": 36,
+      "winner": "yellow",
+      "colors_known": true
+    },
+    {
+      "series": "finales",
+      "n": 253,
+      "team_blue": "Hololutek",
+      "team_yellow": "ESEO – ANGERS",
+      "score_blue": 124,
+      "score_yellow": 88,
+      "winner": "blue",
+      "colors_known": true,
+      "phase": "huitiemes"
+    },
+    {
+      "series": "finales",
+      "n": 254,
+      "team_blue": "R3EA",
+      "team_yellow": "7Robot",
+      "score_blue": 83,
+      "score_yellow": 28,
+      "winner": "blue",
+      "colors_known": true,
+      "phase": "huitiemes"
+    },
+    {
+      "series": "finales",
+      "n": 255,
+      "team_blue": "TDS-Team 72 Familly",
+      "team_yellow": "Robotronik Phelma",
+      "score_blue": 24,
+      "score_yellow": 91,
+      "winner": "yellow",
+      "colors_known": true,
+      "phase": "huitiemes"
+    },
+    {
+      "series": "finales",
+      "n": 256,
+      "team_blue": "Ze Crazy Team",
+      "team_yellow": "Pêle-Mêle",
+      "score_blue": 110,
+      "score_yellow": 89,
+      "winner": "blue",
+      "colors_known": true,
+      "phase": "huitiemes"
+    },
+    {
+      "series": "finales",
+      "n": 257,
+      "team_blue": "TeamDiff",
+      "team_yellow": "UTCoupe",
+      "score_blue": 79,
+      "score_yellow": 37,
+      "winner": "blue",
+      "colors_known": true,
+      "phase": "huitiemes"
+    },
+    {
+      "series": "finales",
+      "n": 258,
+      "team_blue": "Team Opossums",
+      "team_yellow": "Sudriabotik",
+      "score_blue": 24,
+      "score_yellow": 1,
+      "winner": "blue",
+      "colors_known": true,
+      "phase": "huitiemes"
+    },
+    {
+      "series": "finales",
+      "n": 259,
+      "team_blue": "RCVA",
+      "team_yellow": "Ares ENSEA",
+      "score_blue": 148,
+      "score_yellow": 82,
+      "winner": "blue",
+      "colors_known": true,
+      "phase": "huitiemes"
+    },
+    {
+      "series": "finales",
+      "n": 260,
+      "team_blue": "Club Tech CentraleSupélec",
+      "team_yellow": "Zest Machine",
+      "score_blue": 69,
+      "score_yellow": 80,
+      "winner": "yellow",
+      "colors_known": true,
+      "phase": "huitiemes"
+    },
+    {
+      "series": "finales",
+      "n": 261,
+      "team_blue": "Hololutek",
+      "team_yellow": "R3EA",
+      "score_blue": 124,
+      "score_yellow": 77,
+      "winner": "blue",
+      "colors_known": true,
+      "phase": "quarts"
+    },
+    {
+      "series": "finales",
+      "n": 262,
+      "team_blue": "Robotronik Phelma",
+      "team_yellow": "Ze Crazy Team",
+      "score_blue": 47,
+      "score_yellow": 31,
+      "winner": "blue",
+      "colors_known": true,
+      "phase": "quarts"
+    },
+    {
+      "series": "finales",
+      "n": 263,
+      "team_blue": "TeamDiff",
+      "team_yellow": "Team Opossums",
+      "score_blue": 162,
+      "score_yellow": 61,
+      "winner": "blue",
+      "colors_known": true,
+      "phase": "quarts"
+    },
+    {
+      "series": "finales",
+      "n": 264,
+      "team_blue": "RCVA",
+      "team_yellow": "Zest Machine",
+      "score_blue": 146,
+      "score_yellow": 72,
+      "winner": "blue",
+      "colors_known": true,
+      "phase": "quarts"
+    },
+    {
+      "series": "finales",
+      "n": 266,
+      "team_blue": "Hololutek",
+      "team_yellow": "Robotronik Phelma",
+      "score_blue": 97,
+      "score_yellow": 24,
+      "winner": "blue",
+      "colors_known": true,
+      "phase": "semi"
+    },
+    {
+      "series": "finales",
+      "n": 267,
+      "team_blue": "TeamDiff",
+      "team_yellow": "RCVA",
+      "score_blue": 63,
+      "score_yellow": 141,
+      "winner": "yellow",
+      "colors_known": true,
+      "phase": "semi"
+    },
+    {
+      "series": "finales",
+      "n": 268,
+      "team_blue": "Robotronik Phelma",
+      "team_yellow": "TeamDiff",
+      "score_blue": 126,
+      "score_yellow": 68,
+      "winner": "blue",
+      "colors_known": true,
+      "phase": "petite_finale"
+    },
+    {
+      "series": "finales",
+      "n": 269,
+      "team_blue": "Hololutek",
+      "team_yellow": "RCVA",
+      "score_blue": 127,
+      "score_yellow": 125,
+      "winner": "blue",
+      "colors_known": true,
+      "phase": "finale_1"
+    },
+    {
+      "series": "finales",
+      "n": 270,
+      "team_blue": "RCVA",
+      "team_yellow": "Hololutek",
+      "score_blue": 131,
+      "score_yellow": 85,
+      "winner": "blue",
+      "colors_known": true,
+      "phase": "finale_2"
+    },
+    {
+      "series": "finales",
+      "n": 271,
+      "team_blue": "Hololutek",
+      "team_yellow": "RCVA",
+      "score_blue": 22,
+      "score_yellow": 160,
+      "winner": "yellow",
+      "colors_known": true,
+      "phase": "finale_3"
+    },
+    {
+      "series": "finales",
+      "n": 272,
+      "team_blue": "MiAM Robotique",
+      "team_yellow": "Girafes",
+      "score_blue": 102,
+      "score_yellow": 89,
+      "winner": "blue",
+      "colors_known": true,
+      "phase": "semi"
+    },
+    {
+      "series": "finales",
+      "n": 273,
+      "team_blue": "Mars Attacks!",
+      "team_yellow": "TDS-Team 72",
+      "score_blue": 119,
+      "score_yellow": 88,
+      "winner": "blue",
+      "colors_known": true,
+      "phase": "semi"
+    },
+    {
+      "series": "finales",
+      "n": 274,
+      "team_blue": "MiAM Robotique",
+      "team_yellow": "Mars Attacks!",
+      "score_blue": 67,
+      "score_yellow": 121,
+      "winner": "yellow",
+      "colors_known": true,
+      "phase": "finale_1"
+    }
+  ]
+}

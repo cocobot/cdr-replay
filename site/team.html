@@ -120,24 +120,39 @@ const PHASES = [["huitiemes","1/8"],["quarts","1/4"],["semi","1/2"],["petite_fin
     html += `</div>`;
   }
 
-  // Match list per year (video data)
+  // Match list per year (video data) — load each series JSON to read joined scores.
+  const seriesCache = {};
+  async function loadSeries(slug) {
+    return seriesCache[slug] || (seriesCache[slug] = await fetchJSON(`data/series/${slug}.json`).catch(() => null));
+  }
   for (const y of years) {
-    const rows = apps.filter((a) => a.year === y).map((a) => {
+    const yApps = apps.filter((a) => a.year === y);
+    const rows = await Promise.all(yApps.map(async (a) => {
       const goLink = `match.html?s=${a.slug}&i=${a.mi}`;
       const no = isFinale(a.series) ? "F" : "S" + a.series;
+      // Pull the full match (with scores, if joined) from its series file.
+      const ser = await loadSeries(a.slug);
+      const m = (ser && ser.matches[a.mi]) || {};
+      // Which side is "us"? Compare canonical names.
+      const k = teamKey(matchName);
+      const usSide = teamKey(m.team_yellow) === k ? "yellow"
+                  : teamKey(m.team_blue) === k ? "blue" : null;
+      const oppSide = usSide === "yellow" ? "blue" : usSide === "blue" ? "yellow" : null;
+      const usCls = isUs(matchName) ? "is-us" : (usSide ? sideClass(m, usSide) : "");
+      const oppCls = oppSide ? sideClass(m, oppSide) : "";
       return `<div class="match-row" onclick="location.href='${goLink}'" role="link" tabindex="0">
         <a class="match-row__no" href="${goLink}" onclick="event.stopPropagation()">${no}</a>
         <span class="match-row__teams">
-          <span class="tm${isUs(matchName) ? " is-us" : " winner"}">${teamLinkText(matchName)}</span>
+          <span class="tm${usCls ? " " + usCls : ""}">${teamLinkText(matchName)}</span>
           <span class="vs">vs</span>
-          <span class="tm loser">${teamLinkText(a.opponent)}</span>
+          <span class="tm${oppCls ? " " + oppCls : ""}">${teamLinkText(a.opponent)}</span>
           <span class="year-tag">${a.category === "junior" ? "JR" : "SR"}</span>
         </span>
-        <a class="match-row__score" href="${goLink}" onclick="event.stopPropagation()">Table ${esc(a.table || "?")}</a>
+        <a class="match-row__score" href="${goLink}" onclick="event.stopPropagation()">${scoreCell(m)}</a>
         <a class="match-row__dur" href="${goLink}" onclick="event.stopPropagation()">${fmt(a.t_start)}</a>
       </div>`;
-    }).join("");
-    if (rows) html += `<div class="year-section"><a class="year-section__year" href="year.html?c=${cat}&y=${y}">${y}</a><div class="match-list">${rows}</div></div>`;
+    }));
+    if (rows.length) html += `<div class="year-section"><a class="year-section__year" href="year.html?c=${cat}&y=${y}">${y}</a><div class="match-list">${rows.join("")}</div></div>`;
   }
   if (!apps.length && !Object.keys(standings).length) {
     html += `<p class="page__sub">Aucune donnée pour cette équipe.</p>`;

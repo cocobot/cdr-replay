@@ -31,20 +31,30 @@ fetchJSON(`data/series/${slug}.json`).then((d) => {
   const start = Math.floor(m.t_start), end = Math.ceil(m.t_end);
   const src = `https://www.youtube.com/embed/${d.video_id}?start=${start}&end=${end}&rel=0&modestbranding=1`;
 
-  const tname = (n) => `<span class="tname${isUs(n) ? " is-us-name" : ""}">${teamLinkText(n)}</span>`;
+  // Side-aware class: winner gets default ink colour, loser greys out.
+  const tname = (n, side) => {
+    const cls = ["tname"];
+    if (isUs(n)) cls.push("is-us-name");
+    const sc = sideClass(m, side);
+    if (sc === "winner") cls.push("winner-name");
+    else if (sc === "loser") cls.push("loser-name");
+    return `<span class="${cls.join(" ")}">${teamLinkText(n)}</span>`;
+  };
   const loc = (city, country) => [city, country].filter(Boolean).join(", ");
   const prev = i > 0 ? d.matches[i - 1] : null;
   const next = i < d.matches.length - 1 ? d.matches[i + 1] : null;
   const pn = (mm) => `${mm.team_yellow || "?"} vs ${mm.team_blue || "?"}`;
+  const hasScore = m.score_yellow != null && m.score_blue != null;
 
   document.getElementById("page").innerHTML = `
     <a class="back" href="series.html?s=${slug}">← ${label} · ${catLabel(d.category)} ${d.year}</a>
     <div class="player"><iframe src="${src}" title="match" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
     <div class="match-head">
       <div class="match-head__teams">
-        ${tname(m.team_yellow)}<span class="vs">vs</span>${tname(m.team_blue)}
+        ${tname(m.team_yellow, "yellow")}<span class="vs">vs</span>${tname(m.team_blue, "blue")}
         ${us ? '<span class="is-us-badge">← nous !</span>' : ""}
       </div>
+      ${hasScore ? `<div class="match-head__score">${scoreCell(m)}</div>` : ""}
     </div>
     <div class="match-meta">
       <span><strong>${catLabel(d.category)}</strong> · ${label}${!isFinale(d.series) ? ` · Match ${i + 1}` : ""}</span>

@@ -442,6 +442,7 @@ input { font: inherit; color: inherit; }
   font-weight: 600;
 }
 .match-row__score .w { color: var(--fir); font-weight: 700; }
+.match-row__score__sep { margin: 0 3px; color: var(--muted); font-weight: 400; }
 .match-row__dur {
   font-family: var(--mono);
   font-size: 11px;

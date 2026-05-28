@@ -38,15 +38,15 @@ fetchJSON(`data/series/${slug}.json`).then((d) => {
   document.getElementById("list").innerHTML = d.matches.map((m, i) => {
     const no = isFinale(d.series) ? "F" + (i + 1) : "M" + String(i + 1).padStart(2, "0");
     const goLink = `match.html?s=${slug}&i=${i}`;
-    const cls = (n) => "tm" + (isUs(n) ? " is-us" : " winner");
+    const cls = (n, side) => "tm" + (isUs(n) ? " is-us" : (sideClass(m, side) ? " " + sideClass(m, side) : ""));
     return `<div class="match-row" onclick="location.href='${goLink}'" role="link" tabindex="0">
       <a class="match-row__no" href="${goLink}" onclick="event.stopPropagation()">${no}</a>
       <span class="match-row__teams">
-        <span class="${cls(m.team_yellow)}">${teamLinkText(m.team_yellow)}</span>
+        <span class="${cls(m.team_yellow, "yellow")}">${teamLinkText(m.team_yellow)}</span>
         <span class="vs">vs</span>
-        <span class="${cls(m.team_blue)}">${teamLinkText(m.team_blue)}</span>
+        <span class="${cls(m.team_blue, "blue")}">${teamLinkText(m.team_blue)}</span>
       </span>
-      <a class="match-row__score" href="${goLink}" onclick="event.stopPropagation()">Table ${esc(m.table || "?")}</a>
+      <a class="match-row__score" href="${goLink}" onclick="event.stopPropagation()">${scoreCell(m)}</a>
       <a class="match-row__dur" href="${goLink}" onclick="event.stopPropagation()">${fmt(m.t_start)}</a>
     </div>`;
   }).join("") || `<div class="match-row"><span class="match-row__teams" style="color:var(--muted)">Aucun match détecté.</span></div>`;

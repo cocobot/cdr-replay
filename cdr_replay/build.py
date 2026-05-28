@@ -14,6 +14,7 @@ import json
 import os
 import re
 import subprocess
+import sys
 from pathlib import Path
 
 import yaml
@@ -142,6 +143,18 @@ def build(config_path="config/videos.yaml", ocr_fps=1.0, workers=0,
 
     n_series = sum(len(y) for c in tree.values() for y in c.values())
     print(f"\nDone | {n_series} séries, {len(teams)} équipes")
+
+    # Post-process: consolidate OCR variants ↔ sheet canonicals, then join
+    # per-match scores from the sheet. Idempotent — safe to re-run on already
+    # consolidated data.
+    print("\n[post] consolidate team names...")
+    subprocess.run([sys.executable, str(ROOT / "scripts" / "consolidate_teams.py")],
+                   check=False)
+    print("\n[post] join sheet scores...")
+    subprocess.run([sys.executable, str(ROOT / "scripts" / "join_scores.py")],
+                   check=False)
+    if publish:
+        _git_publish("data: consolidate team names + join sheet scores")
 
 
 def _mode(vals):
