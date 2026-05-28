@@ -17,8 +17,14 @@
       <a class="back" href="index.html">← Accueil</a>
       <h1 class="page__title page__title--marked" id="title">Édition</h1>
       <p class="page__sub" id="sub"></p>
-      <div class="tabs" id="tabs"></div>
-      <div class="series-grid" id="grid"></div>
+      <div class="block">
+        <h2 class="block__title">Séries</h2>
+        <div class="series-grid" id="grid"></div>
+      </div>
+      <div class="block">
+        <h2 class="block__title" id="teamsTitle">Toutes les équipes</h2>
+        <div class="team-list" id="teamlist"></div>
+      </div>
     </div>
   </main>
 </div>
@@ -27,43 +33,59 @@
 <script>
 mountHeader();
 const year = qs("y");
-let TREE = null, cat = null;
-document.getElementById("title").textContent = `Édition ${year}`;
+const cat = (qs("c") || CAT);
+document.getElementById("title").textContent = `${catLabel(cat)} ${year}`;
 
-fetchJSON("data/index.json").then((d) => {
-  TREE = d.tree;
-  const cats = ["senior", "junior"].filter((c) => d.tree[c] && d.tree[c][year]);
-  const sub = cats.map((c) => {
-    const n = Object.values(d.tree[c][year]).reduce((a, b) => a + b, 0);
-    return `${n} matches en ${catLabel(c).toLowerCase()}`;
-  }).join(" · ");
-  document.getElementById("sub").textContent = sub;
-  document.getElementById("tabs").innerHTML = cats.map((c) => {
-    const n = Object.values(d.tree[c][year]).reduce((a, b) => a + b, 0);
-    return `<button class="tab" data-c="${c}">${catLabel(c)} <span class="tab__count">${n} matches</span></button>`;
-  }).join("");
-  document.querySelectorAll(".tab").forEach((b) => b.onclick = () => select(b.dataset.c));
-  select(cats[0]);
-});
-
-function select(c) {
-  cat = c;
-  document.querySelectorAll(".tab").forEach((b) => b.classList.toggle("is-active", b.dataset.c === c));
-  const series = TREE[c][year];
+(async () => {
+  const [d, teams] = await Promise.all([fetchJSON("data/index.json"), fetchJSON("data/teams.json")]);
+  const series = (d.tree[cat] || {})[year] || {};
   const reg = Object.keys(series).filter((s) => !isFinale(s)).sort();
   const fin = Object.keys(series).filter(isFinale);
   let html = reg.map((s) =>
-    `<a class="series-link" href="series.html?s=${slugOf(c, year, s)}">
+    `<a class="series-link" href="series.html?s=${slugOf(cat, year, s)}">
        <div class="series-link__name">Série ${s}</div>
        <div class="series-link__count">${series[s]} matches</div>
      </a>`).join("");
   html += fin.map((s) =>
-    `<a class="series-link series-link--finale" href="series.html?s=${slugOf(c, year, s)}">
+    `<a class="series-link series-link--finale" href="series.html?s=${slugOf(cat, year, s)}">
        <div class="series-link__name">Phase finale</div>
-       <div class="series-link__count">${series[s]} matches</div>
+       <div class="series-link__count">${series[s]} matches · 1/8 → finale</div>
      </a>`).join("");
-  document.getElementById("grid").innerHTML = html;
-}
+  document.getElementById("grid").innerHTML = html || `<div class="empty">Aucune série</div>`;
+
+  // Teams that played in this (cat, year), enriched with legend/rank from standings
+  const standings = await loadStandings(cat, year);
+  const namesInYearCat = new Set();
+  for (const [name, apps] of Object.entries(teams)) {
+    if (apps.some((a) => a.year === parseInt(year, 10) && a.category === cat)) namesInYearCat.add(name);
+  }
+  // Also include sheet teams that the video didn't see
+  if (standings) for (const t of Object.values(standings)) namesInYearCat.add(t.name);
+
+  const all = [...namesInYearCat].map((name) => {
+    const k = teamKey(name);
+    const st = standings && standings[k];
+    const tmeta = d.teams.find((x) => teamKey(x.name) === k);
+    return {
+      name,
+      city: tmeta ? tmeta.city : null,
+      us: tmeta ? tmeta.us : isUs(name),
+      cat,
+      rank: st && st.rank,
+      legend: st && st.type === "legends",
+    };
+  }).sort((a, b) => {
+    if (a.rank && b.rank) return a.rank - b.rank;
+    if (a.rank) return -1;
+    if (b.rank) return 1;
+    return a.name.localeCompare(b.name);
+  });
+
+  const nMatches = Object.values(series).reduce((s, n) => s + n, 0);
+  document.getElementById("sub").textContent = `${all.length} équipes · ${nMatches} matches`;
+  document.getElementById("teamsTitle").textContent = `Toutes les équipes — ${catLabel(cat)} ${year}`;
+  document.getElementById("teamlist").innerHTML = all.map(teamLinkHTML).join("");
+})();
 </script>
 </body>
 </html>

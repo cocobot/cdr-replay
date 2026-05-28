@@ -31,6 +31,7 @@ fetchJSON(`data/series/${slug}.json`).then((d) => {
   const start = Math.floor(m.t_start), end = Math.ceil(m.t_end);
   const src = `https://www.youtube.com/embed/${d.video_id}?start=${start}&end=${end}&rel=0&modestbranding=1`;
 
+  const tname = (n) => `<span class="tname${isUs(n) ? " is-us-name" : ""}">${teamLinkText(n)}</span>`;
   const loc = (city, country) => [city, country].filter(Boolean).join(", ");
   const prev = i > 0 ? d.matches[i - 1] : null;
   const next = i < d.matches.length - 1 ? d.matches[i + 1] : null;
@@ -41,12 +42,12 @@ fetchJSON(`data/series/${slug}.json`).then((d) => {
     <div class="player"><iframe src="${src}" title="match" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
     <div class="match-head">
       <div class="match-head__teams">
-        ${teamSpan(m.team_yellow)}<span class="vs">vs</span>${teamSpan(m.team_blue)}
+        ${tname(m.team_yellow)}<span class="vs">vs</span>${tname(m.team_blue)}
         ${us ? '<span class="is-us-badge">← nous !</span>' : ""}
       </div>
     </div>
     <div class="match-meta">
-      <span><strong>${catLabel(d.category)}</strong> · ${label} · Match ${i + 1}</span>
+      <span><strong>${catLabel(d.category)}</strong> · ${label}${!isFinale(d.series) ? ` · Match ${i + 1}` : ""}</span>
       <span>Table <strong>${esc(m.table || "?")}</strong></span>
       <span>à ${fmt(m.t_start)}</span>
       ${loc(m.yellow_city, m.yellow_country) ? `<span>📍 ${esc(m.team_yellow)} — ${esc(loc(m.yellow_city, m.yellow_country))}</span>` : ""}

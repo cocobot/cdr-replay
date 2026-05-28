@@ -8,6 +8,26 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .palmares { display: grid; gap: 18px; margin-bottom: 24px; }
+    .palmares__year { background: var(--paper); border: 2.5px solid var(--ink); border-radius: var(--radius);
+      box-shadow: 3px 3px 0 var(--ink); padding: 14px 16px; }
+    .palmares__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px;
+      font-family: var(--display); text-transform: uppercase; margin-bottom: 8px; }
+    .palmares__year .y { font-size: 22px; background: var(--fir); color: white; padding: 1px 10px;
+      border-radius: var(--radius); transform: rotate(-1deg); display: inline-block; }
+    .palmares__rank { font-size: 16px; color: var(--fir-dk); }
+    .palmares__vd { font-family: var(--mono); font-size: 13px; color: var(--muted); }
+    .palmares__total { font-family: var(--mono); font-size: 13px; color: var(--ink); margin-left: auto; }
+    .palmares__row { display: flex; gap: 14px; flex-wrap: wrap; font-family: var(--mono);
+      font-size: 12px; color: var(--ink-2); margin-top: 6px; }
+    .palmares__row span { white-space: nowrap; }
+    .palmares__row b { color: var(--fir-dk); font-weight: 700; }
+    .palmares__phases { margin-top: 6px; padding-top: 8px; border-top: 1.5px dashed var(--ink);
+      display: flex; gap: 12px; flex-wrap: wrap; font-family: var(--mono); font-size: 12px;
+      text-transform: uppercase; letter-spacing: 0.04em; }
+    .palmares__phases span b { color: var(--fir); }
+  </style>
 </head>
 <body>
 <div class="app">
@@ -22,45 +42,109 @@
 mountHeader();
 const team = qs("team");
 const mode = (arr) => { const c = {}; let best = null, bn = 0; arr.forEach((x) => { if (!x) return; c[x] = (c[x] || 0) + 1; if (c[x] > bn) { bn = c[x]; best = x; } }); return best; };
+const PHASES = [["huitiemes","1/8"],["quarts","1/4"],["semi","1/2"],["petite_finale","Petite"],["finale_1","Finale 1"],["finale_2","Finale 2"],["finale_3","Finale 3"]];
 
-fetchJSON("data/teams.json").then((teams) => {
-  const apps = teams[team] || [];
-  document.title = `CDR · ${team}`;
-  if (!apps.length) {
-    document.getElementById("page").innerHTML = `<a class="back" href="index.html">← Accueil</a><h1 class="page__title">Équipe introuvable</h1>`;
-    return;
-  }
-  const us = isUs(team);
-  const cat = mode(apps.map((a) => a.category)) || "senior";
+(async () => {
+  const teamsJson = await fetchJSON("data/teams.json");
+  // Match by normalized name in case of apostrophe variants (Coc'otter vs coc'otter).
+  const key = teamKey(team);
+  const matchName = Object.keys(teamsJson).find((n) => teamKey(n) === key) || team;
+  const apps = teamsJson[matchName] || [];
+  document.title = `CDR · ${matchName}`;
+
+  // City/country = modal across appearances (video data).
   const city = mode(apps.map((a) => a.city));
   const country = mode(apps.map((a) => a.country));
-  const loc = [city, country].filter(Boolean).join(", ");
+  const cat = mode(apps.map((a) => a.category)) || "senior";
   const years = [...new Set(apps.map((a) => a.year))].sort((a, b) => b - a);
+  const us = isUs(matchName);
+
+  // Pull per-year standings for this team (cat-scoped).
+  const allYears = [2024, 2025, 2026];
+  const standings = {};
+  let anyLegend = false;
+  for (const y of allYears) {
+    const m = await loadStandings(cat, y);
+    if (m && m[key]) {
+      standings[y] = m[key];
+      if (m[key].type === "legends") anyLegend = true;
+    }
+  }
+  const yearsAll = [...new Set([...years, ...Object.keys(standings).map(Number)])].sort((a, b) => b - a);
+
+  // Aggregated stats (prefer standings totals; fall back to video appearance count)
+  const totals = Object.values(standings).reduce((a, s) => ({
+    matches: a.matches + (s.matches || 0), wins: a.wins + (s.wins || 0), losses: a.losses + (s.losses || 0),
+  }), { matches: 0, wins: 0, losses: 0 });
+  const haveStats = totals.matches > 0;
 
   let html = `
     <a class="back" href="index.html">← Accueil</a>
-    <h1 class="page__title page__title--marked">${esc(team)}${us ? '<span class="is-us-badge">c&rsquo;est nous</span>' : ""}</h1>
-    <p class="page__sub">${loc ? esc(loc) + " " : ""}<span class="cat-pill cat-pill--${cat}">${catLabel(cat)}</span></p>
+    <h1 class="page__title page__title--marked">
+      ${esc(matchName)}${anyLegend ? legendMark() : ""}${us ? '<span class="is-us-badge">c&rsquo;est nous</span>' : ""}
+    </h1>
+    <p class="page__sub">
+      ${[city, country].filter(Boolean).map(esc).join(", ")}
+      <span class="cat-pill cat-pill--${cat}">${catLabel(cat)}</span>
+    </p>
     <div class="team-stats">
-      <span><strong>${apps.length}</strong> matches</span>
-      <span><strong>${years.length}</strong> édition${years.length > 1 ? "s" : ""}</span>
+      ${haveStats ? `<span><strong>${totals.matches}</strong> matches</span>
+        <span><strong>${totals.wins}V</strong> – ${totals.losses}D</span>` :
+        `<span><strong>${apps.length}</strong> apparitions</span>`}
+      <span><strong>${yearsAll.length}</strong> édition${yearsAll.length > 1 ? "s" : ""}</span>
     </div>`;
 
+  // Palmarès (sheet-based) per year
+  if (Object.keys(standings).length) {
+    html += `<h2 class="block__title">Palmarès</h2><div class="palmares">`;
+    for (const y of allYears.slice().reverse()) {
+      const s = standings[y]; if (!s) continue;
+      const phases = PHASES.filter(([k]) => s.phases && s.phases[k] != null);
+      html += `<div class="palmares__year">
+        <div class="palmares__head">
+          <span class="y">${y}</span>
+          ${s.rank ? `<span class="palmares__rank">#${s.rank}</span>` : ""}
+          ${s.wins != null ? `<span class="palmares__vd">${s.wins}V – ${s.losses}D${s.draws ? ` – ${s.draws}N` : ""}</span>` : ""}
+          ${s.type === "legends" ? legendMark() : ""}
+          ${s.score_total != null ? `<span class="palmares__total">${s.score_total} pts</span>` : ""}
+        </div>
+        <div class="palmares__row">
+          ${(s.scores || []).map((sc, i) => sc != null ? `<span>S${i + 1} <b>${sc}</b></span>` : "").join("")}
+          ${s.score_avg != null ? `<span style="margin-left:auto">moy. <b>${s.score_avg}</b></span>` : ""}
+        </div>
+        ${phases.length ? `<div class="palmares__phases">
+          ${phases.map(([k, lab]) => `<span>${lab} <b>${s.phases[k]}</b></span>`).join("")}
+        </div>` : ""}
+      </div>`;
+    }
+    html += `</div>`;
+  }
+
+  // Match list per year (video data)
   for (const y of years) {
     const rows = apps.filter((a) => a.year === y).map((a) => {
+      const goLink = `match.html?s=${a.slug}&i=${a.mi}`;
       const no = isFinale(a.series) ? "F" : "S" + a.series;
-      return `<a class="match-row" href="match.html?s=${a.slug}&i=${a.mi}">
-        <span class="match-row__no">${no}</span>
-        <span class="match-row__teams">${teamSpan(team)}<span class="vs">vs</span><span class="loser">${esc(a.opponent || "?")}</span>
-          <span class="year-tag">${a.category === "junior" ? "JR" : "SR"}</span></span>
-        <span class="match-row__score">Table ${esc(a.table || "?")}</span>
-        <span class="match-row__dur">${fmt(a.t_start)}</span>
-      </a>`;
+      return `<div class="match-row" onclick="location.href='${goLink}'" role="link" tabindex="0">
+        <a class="match-row__no" href="${goLink}" onclick="event.stopPropagation()">${no}</a>
+        <span class="match-row__teams">
+          <span class="tm${isUs(matchName) ? " is-us" : " winner"}">${teamLinkText(matchName)}</span>
+          <span class="vs">vs</span>
+          <span class="tm loser">${teamLinkText(a.opponent)}</span>
+          <span class="year-tag">${a.category === "junior" ? "JR" : "SR"}</span>
+        </span>
+        <a class="match-row__score" href="${goLink}" onclick="event.stopPropagation()">Table ${esc(a.table || "?")}</a>
+        <a class="match-row__dur" href="${goLink}" onclick="event.stopPropagation()">${fmt(a.t_start)}</a>
+      </div>`;
     }).join("");
-    html += `<div class="year-section"><div class="year-section__year">${y}</div><div class="match-list">${rows}</div></div>`;
+    if (rows) html += `<div class="year-section"><a class="year-section__year" href="year.html?c=${cat}&y=${y}">${y}</a><div class="match-list">${rows}</div></div>`;
+  }
+  if (!apps.length && !Object.keys(standings).length) {
+    html += `<p class="page__sub">Aucune donnée pour cette équipe.</p>`;
   }
   document.getElementById("page").innerHTML = html;
-}).catch(() => {
+})().catch((e) => {
+  console.error(e);
   document.getElementById("page").innerHTML = `<a class="back" href="index.html">← Accueil</a><h1 class="page__title">Erreur</h1>`;
 });
 </script>

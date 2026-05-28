@@ -15,15 +15,15 @@
   <main style="flex:1">
     <div class="container page">
       <h1 class="page__title page__title--marked">Salut. Les matches sont là.</h1>
-      <p class="page__sub">Tape une équipe, choisis une année, regarde. Voilà.</p>
+      <p class="page__sub">Choisis une année ou une équipe.</p>
 
       <div class="block">
-        <h2 class="block__title">Année</h2>
+        <h2 class="block__title" id="yearsTitle">Année</h2>
         <div class="year-row" id="years"></div>
       </div>
 
       <div class="block">
-        <h2 class="block__title">Équipes</h2>
+        <h2 class="block__title" id="teamsTitle">Équipes</h2>
         <div class="inline-search">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="color:var(--ink)"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
           <input id="q" type="text" placeholder="Cocotter, Eirbot, EsialRobotik…" autocomplete="off">
@@ -32,6 +32,15 @@
         <div class="team-list" id="teamlist"></div>
         <p id="more" style="margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em"></p>
       </div>
+
+      <aside class="thanks" id="thanks" style="display:none">
+        <div class="thanks__title">Big up</div>
+        <ul class="thanks__list">
+          <li><a class="thanks__link" href="team.html?team=Eirbot"><span class="thanks__who">Eirbot</span></a> <span class="thanks__what">pour la <em>passion</em> ✊</span></li>
+          <li><span class="thanks__who">Planète Sciences</span> <span class="thanks__what">pour <em>l'orga</em> et les vidéos</span></li>
+          <li><a class="thanks__link" href="team.html?team=7Robot"><span class="thanks__who">DanLo' <span class="thanks__org">de 7Robot</span></span></a> <span class="thanks__what">pour les <em>STAAAAAAAAATS</em> sur le Google Doc</span></li>
+        </ul>
+      </aside>
     </div>
   </main>
 </div>
@@ -39,34 +48,71 @@
 <script src="assets/app.js"></script>
 <script>
 mountHeader();
-let TEAMS = [];
+let TEAMS = [], LEGENDS = new Set(), RANKS = {};
+document.getElementById("yearsTitle").textContent = `Année · ${catLabel(CAT)}`;
+document.getElementById("teamsTitle").textContent = `Équipes · ${catLabel(CAT)}`;
+if (CAT === "senior") document.getElementById("thanks").style.display = "block";
 
-fetchJSON("data/index.json").then((d) => {
-  // Year buttons (union across categories, newest first)
-  const years = [...new Set(Object.values(d.tree).flatMap((yr) => Object.keys(yr)))].sort().reverse();
+(async () => {
+  const d = await fetchJSON("data/index.json");
+  // Years: union of parsed videos + years with standings (senior only)
+  const treeYears = Object.keys(d.tree[CAT] || {});
+  const standingsYears = CAT === "senior" ? ["2024", "2025", "2026"] : [];
+  const years = [...new Set([...treeYears, ...standingsYears])].sort().reverse();
   document.getElementById("years").innerHTML = years.map((y, i) =>
-    `<a class="year-btn${i === 0 ? " is-current" : ""}" href="year.html?y=${y}">${y}</a>`).join("");
+    `<a class="year-btn${i === 0 ? " is-current" : ""}" href="year.html?c=${CAT}&y=${y}">${y}</a>`).join("");
 
-  TEAMS = d.teams;
+  // Pull Legends + most-recent rank from standings (and add sheet-only teams)
+  const SHEET_TEAMS = new Map();    // key -> {name, city}
+  for (const y of years.slice().reverse()) {            // oldest first so newest rank wins
+    const m = await loadStandings(CAT, y);
+    if (!m) continue;
+    for (const t of Object.values(m)) {
+      const k = teamKey(t.name);
+      if (t.type === "legends") LEGENDS.add(k);
+      if (t.rank) RANKS[k] = { year: y, rank: t.rank };
+      if (!SHEET_TEAMS.has(k)) SHEET_TEAMS.set(k, { name: t.name });
+    }
+  }
+
+  // Team list: video teams in cat, augmented with sheet-only teams (with their official name).
+  const fromVideo = d.teams.filter((t) => t.cat === CAT);
+  const knownKeys = new Set(fromVideo.map((t) => teamKey(t.name)));
+  const extras = [...SHEET_TEAMS.values()].filter((t) => !knownKeys.has(teamKey(t.name)))
+    .map((t) => ({ name: t.name, city: null, cat: CAT, us: isUs(t.name) }));
+  // Drop OCR junk (1-2 char names, no rank, no sheet match)
+  TEAMS = [...fromVideo, ...extras].filter((t) => {
+    const k = teamKey(t.name);
+    return k.length >= 3 || RANKS[k];
+  });
+
   const input = document.getElementById("q");
   const q0 = qs("q");
   if (q0) input.value = q0;
   render();
   input.addEventListener("input", render);
-});
+})();
 
 function render() {
   const q = document.getElementById("q").value.trim().toLowerCase();
-  const filtered = q
+  const filtered = (q
     ? TEAMS.filter((t) => t.name.toLowerCase().includes(q) || (t.city || "").toLowerCase().includes(q))
-    : TEAMS;
-  const visible = filtered.slice(0, q ? 60 : 24);
+    : TEAMS.slice())
+    .sort((a, b) => {                 // ranked teams first (by rank asc), then alphabetical
+      const ra = (RANKS[teamKey(a.name)] || {}).rank, rb = (RANKS[teamKey(b.name)] || {}).rank;
+      if (ra && rb) return ra - rb;
+      if (ra) return -1;
+      if (rb) return 1;
+      return a.name.localeCompare(b.name);
+    });
+  const visible = filtered.slice(0, q ? 60 : 20);
   document.getElementById("count").textContent = `${filtered.length} équipes`;
-  document.getElementById("teamlist").innerHTML = visible.map(teamLinkHTML).join("")
-    || `<div style="padding:14px;font-family:var(--hand);font-size:18px;color:var(--muted)">Rien trouvé. Try again ?</div>`;
-  const more = document.getElementById("more");
-  more.textContent = (!q && filtered.length > visible.length)
-    ? `+ ${filtered.length - visible.length} autres équipes — tape pour chercher` : "";
+  document.getElementById("teamlist").innerHTML = visible.map((t) => {
+    const k = teamKey(t.name);
+    return teamLinkHTML({ ...t, legend: LEGENDS.has(k), rank: (RANKS[k] && RANKS[k].rank) || null });
+  }).join("") || `<div style="padding:14px;font-family:var(--hand);font-size:18px;color:var(--muted)">Rien trouvé. Try again ?</div>`;
+  document.getElementById("more").textContent = (!q && filtered.length > visible.length)
+    ? `+ ${filtered.length - visible.length} autres — tape pour chercher, ou ouvre une année` : "";
 }
 </script>
 </body>
