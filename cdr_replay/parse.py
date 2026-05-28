@@ -133,9 +133,16 @@ def _mode_city(reads):
 
 
 def _mode_country(reads):
+    """France is overwhelmingly the country at the Coupe de France de Robotique
+    -> if France was ever a plausible snap, prefer it (the per-frame country OCR
+    is low-contrast and noisy snaps to Brésil/Suisse/Espagne happen)."""
     snapped = [overlay.snap_country(r) for r in reads if r]
     snapped = [s for s in snapped if s]
-    return Counter(snapped).most_common(1)[0][0] if snapped else None
+    if not snapped:
+        return None
+    if "France" in snapped:
+        return "France"
+    return Counter(snapped).most_common(1)[0][0]
 
 
 def _resolve_pair(ys, bs, tail=15):
