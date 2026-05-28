@@ -108,8 +108,10 @@ def build(config_path="config/videos.yaml", ocr_fps=1.0, workers=0,
         print(f"[{cat} {year} série {series}] {vid}")
         try:
             path = ensure_download(v["youtube"])
+            cfg = overlay.load_overlay(year)
             matches, duration = parse.parse_video(
-                str(path), templates, roster=roster, ocr_fps=ocr_fps, workers=workers)
+                str(path), templates, cfg=cfg, roster=roster,
+                ocr_fps=ocr_fps, workers=workers)
         except Exception as e:            # bad download / parse -> skip, keep going
             print(f"  ! échec, on saute: {e}")
             continue

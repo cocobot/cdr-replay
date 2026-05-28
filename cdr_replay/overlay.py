@@ -55,6 +55,32 @@ class OverlayConfig:
 DEFAULT = OverlayConfig()
 
 
+def load_overlay(year=None, path="config/overlays.yaml"):
+    """Build an OverlayConfig for `year` by merging `default` + `by_year[year]`
+    from the yaml config. Returns DEFAULT if the file or year is missing."""
+    import yaml
+    from pathlib import Path
+    p = Path(path)
+    if not p.is_absolute():
+        p = Path(__file__).resolve().parent.parent / path
+    if not p.exists():
+        return DEFAULT
+    raw = yaml.safe_load(p.read_text(encoding="utf-8")) or {}
+    base = dict(raw.get("default") or {})
+    if year is not None:
+        ov = (raw.get("by_year") or {}).get(int(year)) or (raw.get("by_year") or {}).get(str(year))
+        if ov:
+            base.update(ov)
+    # YAML loads lists; the dataclass expects tuples for region/banner fields.
+    def t(v):
+        if isinstance(v, list):
+            return tuple(t(x) for x in v)
+        return v
+    fields = {f.name for f in OverlayConfig.__dataclass_fields__.values()}
+    kwargs = {k: t(v) for k, v in base.items() if k in fields}
+    return OverlayConfig(**kwargs)
+
+
 # ---------------------------------------------------------------------------
 # Glyph templates
 # ---------------------------------------------------------------------------
@@ -227,6 +253,8 @@ def _ocr_line(frame, region, thresh, otsu=False):
 def read_city(frame, side, cfg=DEFAULT):
     """City under a team name (white text on the banner). Tesseract — classic font."""
     region = cfg.city_yellow if side == "yellow" else cfg.city_blue
+    if not region:                        # disabled for this year's overlay
+        return None
     t = re.sub(r"[^0-9A-Za-zÀ-ÿ' .-]", "", _ocr_line(frame, region, cfg.city_thresh))
     t = re.sub(r"\s+", " ", t).strip(" .-'")
     toks = t.lower().split()
@@ -238,6 +266,8 @@ def read_city(frame, side, cfg=DEFAULT):
 def read_country_raw(frame, side, cfg=DEFAULT):
     """Raw country read (low-contrast grey text). Snap+vote done by the caller."""
     region = cfg.country_yellow if side == "yellow" else cfg.country_blue
+    if not region:                        # disabled for this year's overlay
+        return None
     raw = _ocr_line(frame, region, 0, otsu=True) or _ocr_line(frame, region, cfg.city_thresh)
     return re.sub(r"[^A-Za-zÀ-ÿ-]", "", raw).strip() or None
 

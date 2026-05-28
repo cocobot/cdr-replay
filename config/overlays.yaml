@@ -1,0 +1,43 @@
+# Calibrage de l'overlay de diffusion, par année.
+#
+# `default` = champs OverlayConfig (zones, seuils). Les `by_year` sont fusionnés
+# par-dessus pour l'année correspondante. Une zone mise à `null` désactive la
+# lecture (la fonction OCR retourne None directement, sans halluciner du bruit).
+#
+# Calibrer une nouvelle année :
+#   1. Sors une frame avec bandeau (debug_ocr/take_screenshot).
+#   2. Vérifie chaque zone (team_yellow/_blue, city_*, country_*, table_region,
+#      timer_region, banner_regions) au pixel près sur ton overlay.
+#   3. Si une info n'est pas affichée par l'overlay de cette année-là
+#      (ex. 2024 : ville/pays SEULEMENT à droite), passe la zone gauche à null.
+#   4. Si la police diffère, il faudra des templates dédiés (overlay.build_from_specimen)
+#      — non couvert ici, on garde les templates 2026.
+
+default:
+  frame_size: [1280, 720]
+  team_yellow: [0, 595, 360, 614]
+  team_blue:   [920, 595, 1280, 614]
+  team_thresh: 200
+  table_region: [575, 625, 700, 660]
+  table_thresh: 180
+  timer_region: [580, 668, 680, 703]
+  timer_thresh: 170
+  city_yellow:    [8, 620, 360, 650]
+  city_blue:      [888, 620, 1268, 650]
+  country_yellow: [8, 650, 360, 680]
+  country_blue:   [888, 650, 1268, 680]
+  city_thresh: 205
+  banner_regions:
+    - [10, 596, 340, 648]
+    - [940, 596, 1270, 648]
+  banner_min: 0.5
+
+by_year:
+  # 2024 : le bandeau gauche n'affiche QUE le nom d'équipe (ni ville ni pays) —
+  # seule la droite porte la sous-ligne ville/pays. On désactive le côté gauche
+  # pour éviter le snap fuzzy sur du bruit vidéo (sinon : Tchéquie, Brésil…).
+  # NB : la police des noms diffère aussi en 2024, les templates 2026 lisent
+  # approximativement → reads à fiabiliser via une calibration dédiée plus tard.
+  2024:
+    city_yellow: null
+    country_yellow: null
