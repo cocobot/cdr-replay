@@ -1,0 +1,2976 @@
+{
+  "year": 2024,
+  "category": "senior",
+  "teams": [
+    {
+      "name": "TDS-Team 72",
+      "type": "legends",
+      "rank": 1,
+      "score_total": 524,
+      "scores": [
+        123,
+        48,
+        122,
+        108,
+        123
+      ],
+      "matches": 5,
+      "wins": 2,
+      "losses": 3,
+      "draws": 0,
+      "score_avg": 104.8,
+      "score_std": 32.38363784,
+      "score_min": 48,
+      "score_max": 123,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "RCVA",
+      "type": null,
+      "rank": 2,
+      "score_total": 489,
+      "scores": [
+        124,
+        98,
+        56,
+        118,
+        93
+      ],
+      "matches": 5,
+      "wins": 4,
+      "losses": 1,
+      "draws": 0,
+      "score_avg": 97.8,
+      "score_std": 42.15334817,
+      "score_min": 2,
+      "score_max": 124,
+      "phases": {
+        "huitiemes": 95,
+        "quarts": 2,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "MiAM Robotique",
+      "type": "legends",
+      "rank": 3,
+      "score_total": 446,
+      "scores": [
+        61,
+        88,
+        117,
+        104,
+        76
+      ],
+      "matches": 5,
+      "wins": 4,
+      "losses": 1,
+      "draws": 0,
+      "score_avg": 89.2,
+      "score_std": 22.15174937,
+      "score_min": 61,
+      "score_max": 117,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "VRAC",
+      "type": null,
+      "rank": 3,
+      "score_total": 446,
+      "scores": [
+        74,
+        75,
+        70,
+        113,
+        114
+      ],
+      "matches": 5,
+      "wins": 5,
+      "losses": 0,
+      "draws": 0,
+      "score_avg": 89.2,
+      "score_std": 31.36257501,
+      "score_min": 46,
+      "score_max": 141,
+      "phases": {
+        "huitiemes": 61,
+        "quarts": 141,
+        "semi": 61,
+        "petite_finale": 46,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Arès (Sikula Robotik)",
+      "type": "legends",
+      "rank": 5,
+      "score_total": 441,
+      "scores": [
+        80,
+        93,
+        72,
+        109,
+        87
+      ],
+      "matches": 5,
+      "wins": 3,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 88.2,
+      "score_std": 14.02497772,
+      "score_min": 72,
+      "score_max": 109,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "ESEO - ANGERS",
+      "type": null,
+      "rank": 5,
+      "score_total": 441,
+      "scores": [
+        90,
+        85,
+        41,
+        138,
+        87
+      ],
+      "matches": 5,
+      "wins": 4,
+      "losses": 1,
+      "draws": 0,
+      "score_avg": 88.2,
+      "score_std": 27.0218019,
+      "score_min": 41,
+      "score_max": 138,
+      "phases": {
+        "huitiemes": 113,
+        "quarts": 115,
+        "semi": 69,
+        "petite_finale": null,
+        "finale_1": 108,
+        "finale_2": 102,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "ARIG",
+      "type": null,
+      "rank": 7,
+      "score_total": 434,
+      "scores": [
+        74,
+        87,
+        103,
+        89,
+        81
+      ],
+      "matches": 5,
+      "wins": 4,
+      "losses": 1,
+      "draws": 0,
+      "score_avg": 86.8,
+      "score_std": 11.04988688,
+      "score_min": 68,
+      "score_max": 103,
+      "phases": {
+        "huitiemes": 88,
+        "quarts": 103,
+        "semi": 68,
+        "petite_finale": null,
+        "finale_1": 87,
+        "finale_2": 91,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Azbot",
+      "type": "legends",
+      "rank": 8,
+      "score_total": 433,
+      "scores": [
+        92,
+        85,
+        96,
+        76,
+        84
+      ],
+      "matches": 5,
+      "wins": 4,
+      "losses": 1,
+      "draws": 0,
+      "score_avg": 86.6,
+      "score_std": 7.733045972,
+      "score_min": 76,
+      "score_max": 96,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Les Karibous",
+      "type": "legends",
+      "rank": 9,
+      "score_total": 426,
+      "scores": [
+        70,
+        89,
+        99,
+        75,
+        93
+      ],
+      "matches": 5,
+      "wins": 3,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 85.2,
+      "score_std": 12.25561096,
+      "score_min": 70,
+      "score_max": 99,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Nickel",
+      "type": null,
+      "rank": 10,
+      "score_total": 414,
+      "scores": [
+        83,
+        77,
+        64,
+        94,
+        96
+      ],
+      "matches": 5,
+      "wins": 5,
+      "losses": 0,
+      "draws": 0,
+      "score_avg": 82.8,
+      "score_std": 35.39161859,
+      "score_min": 1,
+      "score_max": 96,
+      "phases": {
+        "huitiemes": 1,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Ze Crazy Team Sr",
+      "type": null,
+      "rank": 11,
+      "score_total": 405,
+      "scores": [
+        66,
+        98,
+        98,
+        45,
+        98
+      ],
+      "matches": 5,
+      "wins": 5,
+      "losses": 0,
+      "draws": 0,
+      "score_avg": 81,
+      "score_std": 23.47237485,
+      "score_min": 45,
+      "score_max": 107,
+      "phases": {
+        "huitiemes": 107,
+        "quarts": 65,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Robotronik Phelma",
+      "type": null,
+      "rank": 12,
+      "score_total": 392,
+      "scores": [
+        75,
+        79,
+        102,
+        1,
+        135
+      ],
+      "matches": 5,
+      "wins": 3,
+      "losses": 1,
+      "draws": 1,
+      "score_avg": 78.4,
+      "score_std": 44.18898807,
+      "score_min": 1,
+      "score_max": 135,
+      "phases": {
+        "huitiemes": 78,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Eceborg",
+      "type": null,
+      "rank": 13,
+      "score_total": 360,
+      "scores": [
+        50,
+        67,
+        66,
+        75,
+        102
+      ],
+      "matches": 5,
+      "wins": 3,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 72,
+      "score_std": 17.74260409,
+      "score_min": 50,
+      "score_max": 102,
+      "phases": {
+        "huitiemes": 60,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "7Robot",
+      "type": null,
+      "rank": 13,
+      "score_total": 360,
+      "scores": [
+        75,
+        56,
+        92,
+        71,
+        66
+      ],
+      "matches": 5,
+      "wins": 2,
+      "losses": 3,
+      "draws": 0,
+      "score_avg": 72,
+      "score_std": 20.02983885,
+      "score_min": 32,
+      "score_max": 94,
+      "phases": {
+        "huitiemes": 94,
+        "quarts": 58,
+        "semi": 48,
+        "petite_finale": 32,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Evolutek",
+      "type": null,
+      "rank": 15,
+      "score_total": 351,
+      "scores": [
+        44,
+        76,
+        98,
+        69,
+        64
+      ],
+      "matches": 5,
+      "wins": 3,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 70.2,
+      "score_std": 32.49542092,
+      "score_min": 0,
+      "score_max": 98,
+      "phases": {
+        "huitiemes": 87,
+        "quarts": 0,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "RIR Family",
+      "type": null,
+      "rank": 16,
+      "score_total": 349,
+      "scores": [
+        76,
+        74,
+        64,
+        34,
+        101
+      ],
+      "matches": 5,
+      "wins": 2,
+      "losses": 3,
+      "draws": 0,
+      "score_avg": 69.8,
+      "score_std": 23.97498697,
+      "score_min": 34,
+      "score_max": 101,
+      "phases": {
+        "huitiemes": 95,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "École Iféa",
+      "type": null,
+      "rank": 17,
+      "score_total": 312,
+      "scores": [
+        44,
+        46,
+        77,
+        78,
+        67
+      ],
+      "matches": 5,
+      "wins": 4,
+      "losses": 1,
+      "draws": 0,
+      "score_avg": 62.4,
+      "score_std": 13.7563838,
+      "score_min": 44,
+      "score_max": 78,
+      "phases": {
+        "huitiemes": 57,
+        "quarts": 67,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Mars Attacks!",
+      "type": "legends",
+      "rank": 18,
+      "score_total": 300,
+      "scores": [
+        50,
+        80,
+        40,
+        67,
+        63
+      ],
+      "matches": 5,
+      "wins": 3,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 60,
+      "score_std": 15.47578754,
+      "score_min": 40,
+      "score_max": 80,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Goldorak",
+      "type": "legends",
+      "rank": 19,
+      "score_total": 299,
+      "scores": [
+        51,
+        74,
+        44,
+        59,
+        71
+      ],
+      "matches": 5,
+      "wins": 2,
+      "losses": 3,
+      "draws": 0,
+      "score_avg": 59.8,
+      "score_std": 12.79453008,
+      "score_min": 44,
+      "score_max": 74,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Coffee Machine",
+      "type": "legends",
+      "rank": 20,
+      "score_total": 294,
+      "scores": [
+        52,
+        54,
+        70,
+        45,
+        73
+      ],
+      "matches": 5,
+      "wins": 4,
+      "losses": 1,
+      "draws": 0,
+      "score_avg": 58.8,
+      "score_std": 12.11197754,
+      "score_min": 45,
+      "score_max": 73,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Edog",
+      "type": "legends",
+      "rank": 21,
+      "score_total": 290,
+      "scores": [
+        43,
+        62,
+        53,
+        53,
+        79
+      ],
+      "matches": 5,
+      "wins": 3,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 58,
+      "score_std": 13.52774926,
+      "score_min": 43,
+      "score_max": 79,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "INTech",
+      "type": null,
+      "rank": 22,
+      "score_total": 289,
+      "scores": [
+        21,
+        48,
+        71,
+        62,
+        87
+      ],
+      "matches": 5,
+      "wins": 4,
+      "losses": 1,
+      "draws": 0,
+      "score_avg": 57.8,
+      "score_std": 25.31929436,
+      "score_min": 21,
+      "score_max": 87,
+      "phases": {
+        "huitiemes": 87,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Modelec",
+      "type": null,
+      "rank": 23,
+      "score_total": 277,
+      "scores": [
+        null,
+        80,
+        80,
+        52,
+        65
+      ],
+      "matches": 4,
+      "wins": 3,
+      "losses": 1,
+      "draws": 0,
+      "score_avg": 69.25,
+      "score_std": 11.71750827,
+      "score_min": 52,
+      "score_max": 80,
+      "phases": {
+        "huitiemes": 71,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Lucid",
+      "type": null,
+      "rank": 24,
+      "score_total": 267,
+      "scores": [
+        35,
+        63,
+        66,
+        61,
+        42
+      ],
+      "matches": 5,
+      "wins": 3,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 53.4,
+      "score_std": 24.76018309,
+      "score_min": 1,
+      "score_max": 66,
+      "phases": {
+        "huitiemes": 1,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Unimakers",
+      "type": null,
+      "rank": 25,
+      "score_total": 264,
+      "scores": [
+        61,
+        40,
+        35,
+        77,
+        51
+      ],
+      "matches": 5,
+      "wins": 2,
+      "losses": 2,
+      "draws": 1,
+      "score_avg": 52.8,
+      "score_std": 15.60021367,
+      "score_min": 35,
+      "score_max": 77,
+      "phases": {
+        "huitiemes": 43,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Mécapi",
+      "type": "legends",
+      "rank": 26,
+      "score_total": 252,
+      "scores": [
+        33,
+        43,
+        82,
+        78,
+        16
+      ],
+      "matches": 5,
+      "wins": 5,
+      "losses": 0,
+      "draws": 0,
+      "score_avg": 50.4,
+      "score_std": 28.72803509,
+      "score_min": 16,
+      "score_max": 82,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Kameleon",
+      "type": null,
+      "rank": 27,
+      "score_total": 249,
+      "scores": [
+        33,
+        50,
+        36,
+        69,
+        61
+      ],
+      "matches": 5,
+      "wins": 3,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 49.8,
+      "score_std": 15.54670383,
+      "score_min": 33,
+      "score_max": 69,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "GNØLË",
+      "type": null,
+      "rank": 28,
+      "score_total": 247,
+      "scores": [
+        51,
+        55,
+        39,
+        35,
+        67
+      ],
+      "matches": 5,
+      "wins": 1,
+      "losses": 4,
+      "draws": 0,
+      "score_avg": 49.4,
+      "score_std": 12.83744523,
+      "score_min": 35,
+      "score_max": 67,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "TDS-Team Familly",
+      "type": null,
+      "rank": 28,
+      "score_total": 247,
+      "scores": [
+        41,
+        51,
+        77,
+        57,
+        21
+      ],
+      "matches": 5,
+      "wins": 3,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 49.4,
+      "score_std": 20.61067684,
+      "score_min": 21,
+      "score_max": 77,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "EsialRobotik",
+      "type": "legends",
+      "rank": 30,
+      "score_total": 242,
+      "scores": [
+        46,
+        34,
+        64,
+        49,
+        49
+      ],
+      "matches": 5,
+      "wins": 2,
+      "losses": 3,
+      "draws": 0,
+      "score_avg": 48.4,
+      "score_std": 10.69111781,
+      "score_min": 34,
+      "score_max": 64,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "PM-ROBOTIX",
+      "type": "legends",
+      "rank": 31,
+      "score_total": 238,
+      "scores": [
+        1,
+        50,
+        64,
+        45,
+        78
+      ],
+      "matches": 5,
+      "wins": 4,
+      "losses": 1,
+      "draws": 0,
+      "score_avg": 47.6,
+      "score_std": 29.05684085,
+      "score_min": 1,
+      "score_max": 78,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "R3EA",
+      "type": null,
+      "rank": 32,
+      "score_total": 230,
+      "scores": [
+        15,
+        19,
+        68,
+        68,
+        60
+      ],
+      "matches": 5,
+      "wins": 1,
+      "losses": 4,
+      "draws": 0,
+      "score_avg": 46,
+      "score_std": 26.71142078,
+      "score_min": 15,
+      "score_max": 68,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Krabi",
+      "type": "legends",
+      "rank": 33,
+      "score_total": 226,
+      "scores": [
+        36,
+        34,
+        50,
+        38,
+        68
+      ],
+      "matches": 5,
+      "wins": 2,
+      "losses": 3,
+      "draws": 0,
+      "score_avg": 45.2,
+      "score_std": 14.18449858,
+      "score_min": 34,
+      "score_max": 68,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Robooh",
+      "type": null,
+      "rank": 34,
+      "score_total": 221,
+      "scores": [
+        44,
+        36,
+        54,
+        36,
+        51
+      ],
+      "matches": 5,
+      "wins": 3,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 44.2,
+      "score_std": 8.318653737,
+      "score_min": 36,
+      "score_max": 54,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Pokibot",
+      "type": null,
+      "rank": 35,
+      "score_total": 220,
+      "scores": [
+        39,
+        46,
+        31,
+        43,
+        61
+      ],
+      "matches": 5,
+      "wins": 3,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 44,
+      "score_std": 11.04536102,
+      "score_min": 31,
+      "score_max": 61,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Team Chat Robotique",
+      "type": null,
+      "rank": 36,
+      "score_total": 218,
+      "scores": [
+        33,
+        33,
+        55,
+        39,
+        58
+      ],
+      "matches": 5,
+      "wins": 3,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 43.6,
+      "score_std": 12.07476708,
+      "score_min": 33,
+      "score_max": 58,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "COGIP",
+      "type": "legends",
+      "rank": 37,
+      "score_total": 216,
+      "scores": [
+        31,
+        50,
+        49,
+        55,
+        31
+      ],
+      "matches": 5,
+      "wins": 2,
+      "losses": 3,
+      "draws": 0,
+      "score_avg": 43.2,
+      "score_std": 11.36661779,
+      "score_min": 31,
+      "score_max": 55,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "CreamBot",
+      "type": null,
+      "rank": 38,
+      "score_total": 209,
+      "scores": [
+        48,
+        57,
+        62,
+        1,
+        41
+      ],
+      "matches": 5,
+      "wins": 4,
+      "losses": 0,
+      "draws": 1,
+      "score_avg": 41.8,
+      "score_std": 24.20123964,
+      "score_min": 1,
+      "score_max": 62,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Poivron Robotique",
+      "type": "legends",
+      "rank": 39,
+      "score_total": 207,
+      "scores": [
+        41,
+        51,
+        21,
+        37,
+        57
+      ],
+      "matches": 5,
+      "wins": 3,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 41.4,
+      "score_std": 13.88524397,
+      "score_min": 21,
+      "score_max": 57,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "CRENIM",
+      "type": null,
+      "rank": 40,
+      "score_total": 206,
+      "scores": [
+        26,
+        36,
+        59,
+        26,
+        59
+      ],
+      "matches": 5,
+      "wins": 2,
+      "losses": 3,
+      "draws": 0,
+      "score_avg": 41.2,
+      "score_std": 16.75410397,
+      "score_min": 26,
+      "score_max": 59,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Sharp'Attack",
+      "type": null,
+      "rank": 41,
+      "score_total": 205,
+      "scores": [
+        0,
+        49,
+        65,
+        66,
+        25
+      ],
+      "matches": 5,
+      "wins": 2,
+      "losses": 3,
+      "draws": 0,
+      "score_avg": 41,
+      "score_std": 28.2931087,
+      "score_min": 0,
+      "score_max": 66,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "E.S.C.Ro.C.S.",
+      "type": null,
+      "rank": 41,
+      "score_total": 205,
+      "scores": [
+        25,
+        36,
+        45,
+        45,
+        54
+      ],
+      "matches": 5,
+      "wins": 3,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 41,
+      "score_std": 10.9772492,
+      "score_min": 25,
+      "score_max": 54,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Clubelek - INSA Lyon",
+      "type": null,
+      "rank": 43,
+      "score_total": 201,
+      "scores": [
+        0,
+        36,
+        69,
+        75,
+        21
+      ],
+      "matches": 5,
+      "wins": 2,
+      "losses": 3,
+      "draws": 0,
+      "score_avg": 40.2,
+      "score_std": 31.7915083,
+      "score_min": 0,
+      "score_max": 75,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Unimakers Legends",
+      "type": null,
+      "rank": 43,
+      "score_total": 201,
+      "scores": [
+        26,
+        22,
+        57,
+        61,
+        35
+      ],
+      "matches": 5,
+      "wins": 2,
+      "losses": 3,
+      "draws": 0,
+      "score_avg": 40.2,
+      "score_std": 17.85217074,
+      "score_min": 22,
+      "score_max": 61,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Hololutek",
+      "type": null,
+      "rank": 45,
+      "score_total": 196,
+      "scores": [
+        42,
+        0,
+        50,
+        58,
+        46
+      ],
+      "matches": 5,
+      "wins": 3,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 39.2,
+      "score_std": 22.69801753,
+      "score_min": 0,
+      "score_max": 58,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "ENSMASTEEL",
+      "type": null,
+      "rank": 46,
+      "score_total": 191,
+      "scores": [
+        21,
+        33,
+        49,
+        31,
+        57
+      ],
+      "matches": 5,
+      "wins": 1,
+      "losses": 4,
+      "draws": 0,
+      "score_avg": 38.2,
+      "score_std": 14.5327217,
+      "score_min": 21,
+      "score_max": 57,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "ENAC Robotique",
+      "type": null,
+      "rank": 47,
+      "score_total": 172,
+      "scores": [
+        65,
+        61,
+        46,
+        0,
+        0
+      ],
+      "matches": 5,
+      "wins": 2,
+      "losses": 3,
+      "draws": 0,
+      "score_avg": 34.4,
+      "score_std": 32.19161381,
+      "score_min": 0,
+      "score_max": 65,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "IUT Cachan CRAC2",
+      "type": null,
+      "rank": 48,
+      "score_total": 169,
+      "scores": [
+        25,
+        1,
+        52,
+        11,
+        80
+      ],
+      "matches": 5,
+      "wins": 3,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 33.8,
+      "score_std": 32.16675302,
+      "score_min": 1,
+      "score_max": 80,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "ARC",
+      "type": null,
+      "rank": 49,
+      "score_total": 168,
+      "scores": [
+        16,
+        55,
+        26,
+        39,
+        32
+      ],
+      "matches": 5,
+      "wins": 1,
+      "losses": 4,
+      "draws": 0,
+      "score_avg": 33.6,
+      "score_std": 14.63898904,
+      "score_min": 16,
+      "score_max": 55,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Asso r2t2",
+      "type": null,
+      "rank": 50,
+      "score_total": 166,
+      "scores": [
+        11,
+        39,
+        54,
+        43,
+        19
+      ],
+      "matches": 5,
+      "wins": 2,
+      "losses": 3,
+      "draws": 0,
+      "score_avg": 33.2,
+      "score_std": 17.72568757,
+      "score_min": 11,
+      "score_max": 54,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "K-R1BOU",
+      "type": null,
+      "rank": 51,
+      "score_total": 165,
+      "scores": [
+        28,
+        33,
+        0,
+        49,
+        55
+      ],
+      "matches": 5,
+      "wins": 3,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 33,
+      "score_std": 21.52905014,
+      "score_min": 0,
+      "score_max": 55,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Space RIR",
+      "type": null,
+      "rank": 52,
+      "score_total": 164,
+      "scores": [
+        null,
+        31,
+        46,
+        51,
+        36
+      ],
+      "matches": 4,
+      "wins": 3,
+      "losses": 1,
+      "draws": 0,
+      "score_avg": 41,
+      "score_std": 9.128709292,
+      "score_min": 31,
+      "score_max": 51,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Empot'Eirb",
+      "type": null,
+      "rank": 53,
+      "score_total": 163,
+      "scores": [
+        1,
+        27,
+        27,
+        49,
+        59
+      ],
+      "matches": 5,
+      "wins": 1,
+      "losses": 4,
+      "draws": 0,
+      "score_avg": 32.6,
+      "score_std": 22.5122189,
+      "score_min": 1,
+      "score_max": 59,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "AREM",
+      "type": null,
+      "rank": 55,
+      "score_total": 162,
+      "scores": [
+        49,
+        0,
+        31,
+        31,
+        51
+      ],
+      "matches": 5,
+      "wins": 1,
+      "losses": 3,
+      "draws": 1,
+      "score_avg": 32.4,
+      "score_std": 20.46460359,
+      "score_min": 0,
+      "score_max": 51,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Eirbot",
+      "type": null,
+      "rank": 56,
+      "score_total": 159,
+      "scores": [
+        58,
+        21,
+        32,
+        20,
+        28
+      ],
+      "matches": 5,
+      "wins": 1,
+      "losses": 4,
+      "draws": 0,
+      "score_avg": 31.8,
+      "score_std": 15.46609194,
+      "score_min": 20,
+      "score_max": 58,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "DaVinciBot",
+      "type": null,
+      "rank": 57,
+      "score_total": 157,
+      "scores": [
+        1,
+        31,
+        47,
+        52,
+        26
+      ],
+      "matches": 5,
+      "wins": 3,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 31.4,
+      "score_std": 20.13206398,
+      "score_min": 1,
+      "score_max": 52,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "IUT Cachan CRAC1",
+      "type": null,
+      "rank": 58,
+      "score_total": 155,
+      "scores": [
+        45,
+        6,
+        23,
+        4,
+        77
+      ],
+      "matches": 5,
+      "wins": 2,
+      "losses": 3,
+      "draws": 0,
+      "score_avg": 31,
+      "score_std": 30.53686297,
+      "score_min": 4,
+      "score_max": 77,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "SUSSUS INVADERS",
+      "type": "legends",
+      "rank": 59,
+      "score_total": 154,
+      "scores": [
+        null,
+        null,
+        65,
+        19,
+        70
+      ],
+      "matches": 3,
+      "wins": 2,
+      "losses": 1,
+      "draws": 0,
+      "score_avg": 51.33333333,
+      "score_std": 28.11286775,
+      "score_min": 19,
+      "score_max": 70,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Robot'ICAM Vendée",
+      "type": null,
+      "rank": 60,
+      "score_total": 150,
+      "scores": [
+        0,
+        59,
+        26,
+        31,
+        34
+      ],
+      "matches": 5,
+      "wins": 2,
+      "losses": 2,
+      "draws": 1,
+      "score_avg": 30,
+      "score_std": 21.05943969,
+      "score_min": 0,
+      "score_max": 59,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "ENSIM'Elec",
+      "type": null,
+      "rank": 61,
+      "score_total": 140,
+      "scores": [
+        0,
+        53,
+        7,
+        6,
+        74
+      ],
+      "matches": 5,
+      "wins": 2,
+      "losses": 3,
+      "draws": 0,
+      "score_avg": 28,
+      "score_std": 33.35416016,
+      "score_min": 0,
+      "score_max": 74,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Ares ENSEA",
+      "type": null,
+      "rank": 62,
+      "score_total": 135,
+      "scores": [
+        1,
+        16,
+        21,
+        52,
+        45
+      ],
+      "matches": 5,
+      "wins": 2,
+      "losses": 3,
+      "draws": 0,
+      "score_avg": 27,
+      "score_std": 21.10687092,
+      "score_min": 1,
+      "score_max": 52,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "YAKAFOKON",
+      "type": null,
+      "rank": 63,
+      "score_total": 122,
+      "scores": [
+        null,
+        31,
+        49,
+        11,
+        31
+      ],
+      "matches": 4,
+      "wins": 1,
+      "losses": 3,
+      "draws": 0,
+      "score_avg": 30.5,
+      "score_std": 15.5241747,
+      "score_min": 11,
+      "score_max": 49,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "IUT_NICE",
+      "type": null,
+      "rank": 64,
+      "score_total": 116,
+      "scores": [
+        null,
+        33,
+        21,
+        50,
+        12
+      ],
+      "matches": 4,
+      "wins": 3,
+      "losses": 0,
+      "draws": 1,
+      "score_avg": 29,
+      "score_std": 16.43167673,
+      "score_min": 12,
+      "score_max": 50,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Tuxae",
+      "type": null,
+      "rank": 66,
+      "score_total": 115,
+      "scores": [
+        36,
+        36,
+        6,
+        1,
+        36
+      ],
+      "matches": 5,
+      "wins": 2,
+      "losses": 3,
+      "draws": 0,
+      "score_avg": 23,
+      "score_std": 17.88854382,
+      "score_min": 1,
+      "score_max": 36,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "CRUBS",
+      "type": null,
+      "rank": 67,
+      "score_total": 113,
+      "scores": [
+        null,
+        21,
+        1,
+        38,
+        53
+      ],
+      "matches": 4,
+      "wins": 3,
+      "losses": 0,
+      "draws": 1,
+      "score_avg": 28.25,
+      "score_std": 22.38116768,
+      "score_min": 1,
+      "score_max": 53,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Ouiscrewd",
+      "type": null,
+      "rank": 68,
+      "score_total": 106,
+      "scores": [
+        1,
+        21,
+        21,
+        36,
+        27
+      ],
+      "matches": 5,
+      "wins": 2,
+      "losses": 2,
+      "draws": 1,
+      "score_avg": 21.2,
+      "score_std": 12.85301521,
+      "score_min": 1,
+      "score_max": 36,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Véronique Electronique",
+      "type": null,
+      "rank": 69,
+      "score_total": 104,
+      "scores": [
+        null,
+        null,
+        null,
+        53,
+        51
+      ],
+      "matches": 2,
+      "wins": 1,
+      "losses": 0,
+      "draws": 1,
+      "score_avg": 52,
+      "score_std": 1.414213562,
+      "score_min": 51,
+      "score_max": 53,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "LYCEE PAUL VALERY - STI2D",
+      "type": null,
+      "rank": 71,
+      "score_total": 91,
+      "scores": [
+        null,
+        31,
+        0,
+        33,
+        27
+      ],
+      "matches": 4,
+      "wins": 1,
+      "losses": 3,
+      "draws": 0,
+      "score_avg": 22.75,
+      "score_std": 15.37042615,
+      "score_min": 0,
+      "score_max": 33,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Club Tech CentraleSupelec",
+      "type": null,
+      "rank": 70,
+      "score_total": 91,
+      "scores": [
+        45,
+        1,
+        0,
+        1,
+        44
+      ],
+      "matches": 5,
+      "wins": 1,
+      "losses": 4,
+      "draws": 0,
+      "score_avg": 18.2,
+      "score_std": 24.01457891,
+      "score_min": 0,
+      "score_max": 45,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "E-GAB",
+      "type": null,
+      "rank": 72,
+      "score_total": 89,
+      "scores": [
+        null,
+        26,
+        21,
+        21,
+        21
+      ],
+      "matches": 4,
+      "wins": 3,
+      "losses": 1,
+      "draws": 0,
+      "score_avg": 22.25,
+      "score_std": 2.5,
+      "score_min": 21,
+      "score_max": 26,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "ezBot",
+      "type": null,
+      "rank": 74,
+      "score_total": 85,
+      "scores": [
+        21,
+        21,
+        1,
+        21,
+        21
+      ],
+      "matches": 5,
+      "wins": 1,
+      "losses": 3,
+      "draws": 1,
+      "score_avg": 17,
+      "score_std": 8.94427191,
+      "score_min": 1,
+      "score_max": 21,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "StonksIndustries",
+      "type": null,
+      "rank": 73,
+      "score_total": 85,
+      "scores": [
+        21,
+        0,
+        33,
+        31,
+        0
+      ],
+      "matches": 5,
+      "wins": 1,
+      "losses": 4,
+      "draws": 0,
+      "score_avg": 17,
+      "score_std": 16.17096163,
+      "score_min": 0,
+      "score_max": 33,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Coccicube",
+      "type": null,
+      "rank": 75,
+      "score_total": 83,
+      "scores": [
+        null,
+        null,
+        16,
+        21,
+        46
+      ],
+      "matches": 3,
+      "wins": 1,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 27.66666667,
+      "score_std": 16.07275127,
+      "score_min": 16,
+      "score_max": 46,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "E=EIGS'6",
+      "type": null,
+      "rank": 76,
+      "score_total": 77,
+      "scores": [
+        null,
+        null,
+        1,
+        38,
+        38
+      ],
+      "matches": 3,
+      "wins": 2,
+      "losses": 1,
+      "draws": 0,
+      "score_avg": 25.66666667,
+      "score_std": 21.36195996,
+      "score_min": 1,
+      "score_max": 38,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "MDR",
+      "type": null,
+      "rank": 77,
+      "score_total": 72,
+      "scores": [
+        null,
+        null,
+        36,
+        36,
+        0
+      ],
+      "matches": 3,
+      "wins": 1,
+      "losses": 1,
+      "draws": 1,
+      "score_avg": 24,
+      "score_std": 20.78460969,
+      "score_min": 0,
+      "score_max": 36,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Lab Sciren",
+      "type": null,
+      "rank": 78,
+      "score_total": 71,
+      "scores": [
+        0,
+        16,
+        21,
+        33,
+        1
+      ],
+      "matches": 5,
+      "wins": 1,
+      "losses": 3,
+      "draws": 1,
+      "score_avg": 14.2,
+      "score_std": 13.95349419,
+      "score_min": 0,
+      "score_max": 33,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Unimakers RATP",
+      "type": null,
+      "rank": 79,
+      "score_total": 65,
+      "scores": [
+        null,
+        null,
+        null,
+        0,
+        65
+      ],
+      "matches": 2,
+      "wins": 1,
+      "losses": 1,
+      "draws": 0,
+      "score_avg": 32.5,
+      "score_std": 45.96194078,
+      "score_min": 0,
+      "score_max": 65,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "SiERA",
+      "type": null,
+      "rank": 79,
+      "score_total": 65,
+      "scores": [
+        null,
+        0,
+        11,
+        0,
+        54
+      ],
+      "matches": 4,
+      "wins": 0,
+      "losses": 4,
+      "draws": 0,
+      "score_avg": 16.25,
+      "score_std": 25.69533032,
+      "score_min": 0,
+      "score_max": 54,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Sudriabotik",
+      "type": null,
+      "rank": 79,
+      "score_total": 65,
+      "scores": [
+        0,
+        0,
+        42,
+        1,
+        22
+      ],
+      "matches": 5,
+      "wins": 0,
+      "losses": 5,
+      "draws": 0,
+      "score_avg": 13,
+      "score_std": 18.734994,
+      "score_min": 0,
+      "score_max": 42,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Esig'tronix",
+      "type": null,
+      "rank": 95,
+      "score_total": 61,
+      "scores": [
+        22,
+        1,
+        1,
+        26,
+        11
+      ],
+      "matches": 5,
+      "wins": 1,
+      "losses": 4,
+      "draws": 0,
+      "score_avg": 12.2,
+      "score_std": 11.60603291,
+      "score_min": 1,
+      "score_max": 26,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "FrWA -|- Robotium",
+      "type": null,
+      "rank": 83,
+      "score_total": 58,
+      "scores": [
+        null,
+        1,
+        0,
+        21,
+        36
+      ],
+      "matches": 4,
+      "wins": 1,
+      "losses": 3,
+      "draws": 0,
+      "score_avg": 14.5,
+      "score_std": 17.29161647,
+      "score_min": 0,
+      "score_max": 36,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "INSA Toulouse",
+      "type": null,
+      "rank": 84,
+      "score_total": 52,
+      "scores": [
+        null,
+        null,
+        0,
+        31,
+        21
+      ],
+      "matches": 3,
+      "wins": 1,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 17.33333333,
+      "score_std": 15.82192572,
+      "score_min": 0,
+      "score_max": 31,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Club Robot INSA Rennes",
+      "type": null,
+      "rank": 85,
+      "score_total": 45,
+      "scores": [
+        null,
+        0,
+        0,
+        0,
+        45
+      ],
+      "matches": 4,
+      "wins": 0,
+      "losses": 4,
+      "draws": 0,
+      "score_avg": 11.25,
+      "score_std": 22.5,
+      "score_min": 0,
+      "score_max": 45,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Polybot Grenoble",
+      "type": null,
+      "rank": 86,
+      "score_total": 40,
+      "scores": [
+        null,
+        null,
+        1,
+        39,
+        0
+      ],
+      "matches": 3,
+      "wins": 1,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 13.33333333,
+      "score_std": 22.23360819,
+      "score_min": 0,
+      "score_max": 39,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Polybot Riviera",
+      "type": null,
+      "rank": 87,
+      "score_total": 31,
+      "scores": [
+        null,
+        null,
+        null,
+        null,
+        31
+      ],
+      "matches": 1,
+      "wins": 0,
+      "losses": 1,
+      "draws": 0,
+      "score_avg": null,
+      "score_std": "N/A",
+      "score_min": 31,
+      "score_max": 31,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Astro Monkeys",
+      "type": null,
+      "rank": 88,
+      "score_total": 28,
+      "scores": [
+        null,
+        null,
+        0,
+        27,
+        1
+      ],
+      "matches": 3,
+      "wins": 1,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 9.333333333,
+      "score_std": 15.30795,
+      "score_min": 0,
+      "score_max": 27,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "CRIG-1",
+      "type": null,
+      "rank": 89,
+      "score_total": 26,
+      "scores": [
+        null,
+        null,
+        0,
+        26,
+        0
+      ],
+      "matches": 3,
+      "wins": 0,
+      "losses": 3,
+      "draws": 0,
+      "score_avg": 8.666666667,
+      "score_std": 15.011107,
+      "score_min": 0,
+      "score_max": 26,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Projet&Tech'",
+      "type": null,
+      "rank": 90,
+      "score_total": 23,
+      "scores": [
+        null,
+        null,
+        1,
+        11,
+        11
+      ],
+      "matches": 3,
+      "wins": 0,
+      "losses": 2,
+      "draws": 1,
+      "score_avg": 7.666666667,
+      "score_std": 5.773502692,
+      "score_min": 1,
+      "score_max": 11,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "CRLG",
+      "type": null,
+      "rank": 91,
+      "score_total": 22,
+      "scores": [
+        1,
+        11,
+        1,
+        0,
+        9
+      ],
+      "matches": 5,
+      "wins": 0,
+      "losses": 4,
+      "draws": 1,
+      "score_avg": 4.4,
+      "score_std": 5.176871642,
+      "score_min": 0,
+      "score_max": 11,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Robotek Orléans",
+      "type": null,
+      "rank": 92,
+      "score_total": 21,
+      "scores": [
+        null,
+        null,
+        null,
+        null,
+        21
+      ],
+      "matches": 1,
+      "wins": 1,
+      "losses": 0,
+      "draws": 0,
+      "score_avg": null,
+      "score_std": "N/A",
+      "score_min": 21,
+      "score_max": 21,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "(Robot en bois)",
+      "type": null,
+      "rank": 93,
+      "score_total": 3,
+      "scores": [
+        1,
+        1,
+        null,
+        1,
+        null
+      ],
+      "matches": 3,
+      "wins": 3,
+      "losses": 0,
+      "draws": 0,
+      "score_avg": 1,
+      "score_std": 0,
+      "score_min": 1,
+      "score_max": 1,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "ChampiCircuits",
+      "type": null,
+      "rank": 94,
+      "score_total": 2,
+      "scores": [
+        null,
+        null,
+        null,
+        1,
+        1
+      ],
+      "matches": 2,
+      "wins": 0,
+      "losses": 2,
+      "draws": 0,
+      "score_avg": 1,
+      "score_std": 0,
+      "score_min": 1,
+      "score_max": 1,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "ESTIA SYSTEM",
+      "type": null,
+      "rank": 95,
+      "score_total": 1,
+      "scores": [
+        null,
+        null,
+        null,
+        null,
+        1
+      ],
+      "matches": 1,
+      "wins": 0,
+      "losses": 1,
+      "draws": 0,
+      "score_avg": null,
+      "score_std": "N/A",
+      "score_min": 1,
+      "score_max": 1,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Robotik UTT",
+      "type": null,
+      "rank": 95,
+      "score_total": 1,
+      "scores": [
+        null,
+        null,
+        null,
+        null,
+        1
+      ],
+      "matches": 1,
+      "wins": 0,
+      "losses": 1,
+      "draws": 0,
+      "score_avg": null,
+      "score_std": "N/A",
+      "score_min": 1,
+      "score_max": 1,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Unimakers Inovatronic",
+      "type": null,
+      "rank": 95,
+      "score_total": 1,
+      "scores": [
+        null,
+        null,
+        null,
+        null,
+        1
+      ],
+      "matches": 1,
+      "wins": 0,
+      "losses": 0,
+      "draws": 1,
+      "score_avg": null,
+      "score_std": "N/A",
+      "score_min": 1,
+      "score_max": 1,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Association ACDC IUT Le Creusot",
+      "type": null,
+      "rank": 100,
+      "score_total": 0,
+      "scores": [
+        null,
+        null,
+        null,
+        null,
+        0
+      ],
+      "matches": 1,
+      "wins": 0,
+      "losses": 1,
+      "draws": 0,
+      "score_avg": null,
+      "score_std": "N/A",
+      "score_min": 0,
+      "score_max": 0,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "DTRE",
+      "type": null,
+      "rank": 100,
+      "score_total": 0,
+      "scores": [
+        null,
+        null,
+        null,
+        null,
+        0
+      ],
+      "matches": 1,
+      "wins": 0,
+      "losses": 1,
+      "draws": 0,
+      "score_avg": null,
+      "score_std": "N/A",
+      "score_min": 0,
+      "score_max": 0,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Galiléo",
+      "type": null,
+      "rank": 99,
+      "score_total": 0,
+      "scores": [
+        null,
+        null,
+        null,
+        null,
+        0
+      ],
+      "matches": 1,
+      "wins": 0,
+      "losses": 0,
+      "draws": 1,
+      "score_avg": null,
+      "score_std": "N/A",
+      "score_min": 0,
+      "score_max": 0,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    },
+    {
+      "name": "Télécom Robotics",
+      "type": null,
+      "rank": 100,
+      "score_total": 0,
+      "scores": [
+        null,
+        null,
+        null,
+        null,
+        0
+      ],
+      "matches": 1,
+      "wins": 0,
+      "losses": 1,
+      "draws": 0,
+      "score_avg": null,
+      "score_std": "N/A",
+      "score_min": 0,
+      "score_max": 0,
+      "phases": {
+        "huitiemes": null,
+        "quarts": null,
+        "semi": null,
+        "petite_finale": null,
+        "finale_1": null,
+        "finale_2": null,
+        "finale_3": null
+      }
+    }
+  ]
+}
